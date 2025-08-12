@@ -32,14 +32,5 @@ function NavbarRight({ className, ...props }: React.ComponentProps<"nav">) {
   );
 }
 
-function NavbarCenter({ className, ...props }: React.ComponentProps<"nav">) {
-  return (
-    <nav
-      data-slot="navbar-center"
-      className={cn("flex items-center justify-center gap-4", className)}
-      {...props}
-    />
-  );
-}
 
-export { Navbar, NavbarCenter,NavbarLeft, NavbarRight };
+export { Navbar, NavbarLeft, NavbarRight };

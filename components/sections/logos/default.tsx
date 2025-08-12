@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Image from "next/image";
 
 import { Section } from "../../ui/section";
 
@@ -14,34 +15,34 @@ export default function Logos({
   badge = false,
   logos = [
     <div key="aws" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Amazon_Web_Services_Logo.svg.png" alt="AWS" className="h-6 w-auto opacity-70" />
+      <Image src="/Amazon_Web_Services_Logo.svg.png" alt="AWS" width={24} height={24} className="h-6 w-auto opacity-70" />
     </div>,
     <div key="gcp" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/gcp.svg" alt="Google Cloud" className="h-6 w-auto opacity-70" />
+      <Image src="/gcp.svg" alt="Google Cloud" width={24} height={24} className="h-6 w-auto opacity-70" />
       <span>Google Cloud</span>
     </div>,
     <div key="bigquery" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/google-bigquery-logo-1.svg" alt="BigQuery" className="h-6 w-auto opacity-70" />
+      <Image src="/google-bigquery-logo-1.svg" alt="BigQuery" width={24} height={24} className="h-6 w-auto opacity-70" />
       <span>BigQuery</span>
     </div>,
     <div key="powerbi" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/New_Power_BI_Logo.svg.png" alt="Power BI" className="h-6 w-auto opacity-70" />
+      <Image src="/New_Power_BI_Logo.svg.png" alt="Power BI" width={24} height={24} className="h-6 w-auto opacity-70" />
       <span>Power BI</span>
     </div>,
     <div key="tableau" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/tableau-software.svg" alt="Tableau" className="h-6 w-auto opacity-70" />
+      <Image src="/tableau-software.svg" alt="Tableau" width={24} height={24} className="h-6 w-auto opacity-70" />
       <span>Tableau</span>
     </div>,
     <div key="looker" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/looker-icon.svg" alt="Looker" className="h-6 w-auto opacity-70" />
+      <Image src="/looker-icon.svg" alt="Looker" width={24} height={24} className="h-6 w-auto opacity-70" />
       <span>Looker</span>
     </div>,
     <div key="metabase" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/metabase.svg" alt="Metabase" className="h-6 w-auto opacity-70" />
+      <Image src="/metabase.svg" alt="Metabase" width={24} height={24} className="h-6 w-auto opacity-70" />
       <span>Metabase</span>
     </div>,
     <div key="jupyter" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Jupyter_logo.svg.png" alt="Jupyter" className="h-6 w-auto opacity-70" />
+      <Image src="/Jupyter_logo.svg.png" alt="Jupyter" width={24} height={24} className="h-6 w-auto opacity-70" />
       <span>Jupyter</span>
     </div>,
   ],

@@ -54,8 +54,9 @@ export default function DemoPage() {
           message: "",
         });
 
-        // Open scheduling link in a new tab on successful submission
-        window.open('https://app.reclaim.ai/m/gustavo-beltrami/intro', '_blank', 'noopener,noreferrer');
+        setTimeout(() => {
+          window.open('https://app.reclaim.ai/m/gustavo-beltrami/intro', '_blank', 'noopener,noreferrer');
+        }, 1500);
       } else {
         setSubmitStatus({
           type: 'error',
@@ -215,7 +216,7 @@ export default function DemoPage() {
                 </div>
 
                 {/* Submit Button */}
-                <div className="flex justify-center">
+                <div className="flex justify-center ">
                   <Button 
                     type="submit" 
                     size="lg" 

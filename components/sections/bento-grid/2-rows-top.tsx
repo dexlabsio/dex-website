@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 import { Section } from "../../ui/section";
@@ -71,9 +72,11 @@ export default function BentoGrid({
       ),
       visual: (
         <div className="min-h-[300px] w-full py-12 flex items-center justify-center">
-          <img 
+          <Image 
             src="/orchestration_light.svg" 
             alt="Orchestration workflow" 
+            width={600}
+            height={300}
             className="max-w-full max-h-full object-contain"
           />
         </div>
