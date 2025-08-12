@@ -21,32 +21,98 @@ export default function Logos({
   logoItems = [
     {
       logo: (
-        <Image src="/Customers Logos/Caffeine Army.svg" alt="Caffeine Army" width={720} height={180} className={logoImageClassName} />
+        <>
+          <img 
+            src="/Customers Logos/Caffeine Army.svg" 
+            alt="Caffeine Army" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain dark:hidden"
+          />
+          <img 
+            src="/clients_logo_dark/Caffeine Army.svg" 
+            alt="Caffeine Army" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain hidden dark:block"
+          />
+        </>
       ),
     },
     {
       logo: (
-        <Image src="/Customers Logos/Insider.svg" alt="Insider" width={720} height={180} className={logoImageClassName} />
+        <>
+          <img 
+            src="/Customers Logos/Insider.svg" 
+            alt="Insider" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain dark:hidden"
+          />
+          <img 
+            src="/clients_logo_dark/Insider.svg" 
+            alt="Insider" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain hidden dark:block"
+          />
+        </>
       ),
     },
     {
       logo: (
-        <Image src="/Customers Logos/Linus.svg" alt="Linus" width={720} height={180} className={logoImageClassName} />
+        <>
+          <img 
+            src="/Customers Logos/Linus.svg" 
+            alt="Linus" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain dark:hidden"
+          />
+          <img 
+            src="/clients_logo_dark/Linus.svg" 
+            alt="Linus" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain hidden dark:block"
+          />
+        </>
       ),
     },
     {
       logo: (
-        <Image src="/Customers Logos/Minimal Club.svg" alt="Minimal Club" width={720} height={180} className={logoImageClassName} />
+        <>
+          <img 
+            src="/Customers Logos/Minimal Club.svg" 
+            alt="Minimal Club" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain dark:hidden"
+          />
+          <img 
+            src="/clients_logo_dark/Minimal Club.svg" 
+            alt="Minimal Club" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain hidden dark:block"
+          />
+        </>
       ),
     },
     {
       logo: (
-        <Image src="/Customers Logos/Robbin.svg" alt="Robbin" width={720} height={180} className={logoImageClassName} />
+        <>
+          <img 
+            src="/Customers Logos/Robbin.svg" 
+            alt="Robbin" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain dark:hidden"
+          />
+          <img 
+            src="/clients_logo_dark/Robbin.svg" 
+            alt="Robbin" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain hidden dark:block"
+          />
+        </>
       ),
     },
     {
       logo: (
-        <Image src="/Customers Logos/hubii.svg" alt="Hubii" width={720} height={180} className={logoImageClassName} />
+        <>
+          <img 
+            src="/Customers Logos/hubii.svg" 
+            alt="Hubii" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain dark:hidden"
+          />
+          <img 
+            src="/clients_logo_dark/hubii.svg" 
+            alt="Hubii" 
+            className="h-12 w-auto max-w-[120px] opacity-70 object-contain hidden dark:block"
+          />
+        </>
       ),
     },
   ],

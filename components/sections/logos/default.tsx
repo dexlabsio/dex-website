@@ -15,34 +15,42 @@ export default function Logos({
   badge = false,
   logos = [
     <div key="aws" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/Amazon_Web_Services_Logo.svg.png" alt="AWS" width={24} height={24} className="h-6 w-auto opacity-70" />
+      <img src="/Amazon_Web_Services_Logo.svg.png" alt="AWS" className="h-6 w-auto opacity-70 dark:hidden" />
+      <img src="/Integration_Logos_dark/AWS.svg" alt="AWS" className="h-6 w-auto opacity-70 hidden dark:block" />
     </div>,
     <div key="gcp" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/gcp.svg" alt="Google Cloud" width={24} height={24} className="h-6 w-auto opacity-70" />
+      <img src="/gcp.svg" alt="Google Cloud" className="h-6 w-auto opacity-70 dark:hidden" />
+      <img src="/Integration_Logos_dark/GCP.svg" alt="Google Cloud" className="h-6 w-auto opacity-70 hidden dark:block" />
       <span>Google Cloud</span>
     </div>,
     <div key="bigquery" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/google-bigquery-logo-1.svg" alt="BigQuery" width={24} height={24} className="h-6 w-auto opacity-70" />
+      <img src="/google-bigquery-logo-1.svg" alt="BigQuery" className="h-6 w-auto opacity-70 dark:hidden" />
+      <img src="/Integration_Logos_dark/bigquery.svg" alt="BigQuery" className="h-6 w-auto opacity-70 hidden dark:block" />
       <span>BigQuery</span>
     </div>,
     <div key="powerbi" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/New_Power_BI_Logo.svg.png" alt="Power BI" width={24} height={24} className="h-6 w-auto opacity-70" />
+      <img src="/New_Power_BI_Logo.svg.png" alt="Power BI" className="h-6 w-auto opacity-70 dark:hidden" />
+      <img src="/Integration_Logos_dark/power BI.svg" alt="Power BI" className="h-6 w-auto opacity-70 hidden dark:block" />
       <span>Power BI</span>
     </div>,
     <div key="tableau" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/tableau-software.svg" alt="Tableau" width={24} height={24} className="h-6 w-auto opacity-70" />
+      <img src="/tableau-software.svg" alt="Tableau" className="h-6 w-auto opacity-70 dark:hidden" />
+      <img src="/Integration_Logos_dark/tableau.svg" alt="Tableau" className="h-6 w-auto opacity-70 hidden dark:block" />
       <span>Tableau</span>
     </div>,
     <div key="looker" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/looker-icon.svg" alt="Looker" width={24} height={24} className="h-6 w-auto opacity-70" />
+      <img src="/looker-icon.svg" alt="Looker" className="h-6 w-auto opacity-70 dark:hidden" />
+      <img src="/Integration_Logos_dark/looker.svg" alt="Looker" className="h-6 w-auto opacity-70 hidden dark:block" />
       <span>Looker</span>
     </div>,
     <div key="metabase" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/metabase.svg" alt="Metabase" width={24} height={24} className="h-6 w-auto opacity-70" />
+      <img src="/metabase.svg" alt="Metabase" className="h-6 w-auto opacity-70 dark:hidden" />
+      <img src="/Integration_Logos_dark/metabase.svg" alt="Metabase" className="h-6 w-auto opacity-70 hidden dark:block" />
       <span>Metabase</span>
     </div>,
     <div key="jupyter" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/Jupyter_logo.svg.png" alt="Jupyter" width={24} height={24} className="h-6 w-auto opacity-70" />
+      <img src="/Jupyter_logo.svg.png" alt="Jupyter" className="h-6 w-auto opacity-70 dark:hidden" />
+      <img src="/Integration_Logos_dark/jupyter.svg" alt="Jupyter" className="h-6 w-auto opacity-70 hidden dark:block" />
       <span>Jupyter</span>
     </div>,
   ],

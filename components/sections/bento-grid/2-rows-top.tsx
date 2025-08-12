@@ -11,11 +11,11 @@ import {
   TileTitle,
   TileVisual,
 } from "../../ui/tile";
-// GlobeIllustration import removed as it is unused
 import CodeEditorIllustration from "../../illustrations/code-editor";
 import PipelineIllustration from "../../illustrations/pipeline";
 import RippleIllustration from "../../illustrations/ripple";
 import TilesIllustration from "../../illustrations/tiles";
+import GlobeIllustration from "@/public/globe";
 
 interface TileProps {
   title: string;
@@ -72,13 +72,7 @@ export default function BentoGrid({
       ),
       visual: (
         <div className="min-h-[300px] w-full py-12 flex items-center justify-center">
-          <Image 
-            src="/orchestration_light.svg" 
-            alt="Orchestration workflow" 
-            width={600}
-            height={300}
-            className="max-w-full max-h-full object-contain"
-          />
+          <GlobeIllustration />
         </div>
       ),
       size: "col-span-12 md:col-span-6 lg:col-span-4",
