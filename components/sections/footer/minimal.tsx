@@ -20,8 +20,8 @@ export default function FooterSection({
   copyright = "© 2025 dex Tecnologia LTDA. CNPJ: 48.412.896/0001-42. All rights reserved",
   links = [
     { text: "Sign in", href: "https://app.dexlabs.io" },
-    { text: "Privacy Policy", href: "#" },
-    { text: "Terms of Service", href: "#" },
+    { text: "Privacy Policy", href: "/privacy" },
+    { text: "support@dexlabs.io", href: "mailto:support@dexlabs.io" },
   ],
   showModeToggle = true,
   className,
@@ -33,26 +33,14 @@ export default function FooterSection({
           <FooterBottom className="mt-0 flex flex-col items-center gap-4 sm:flex-col md:flex-row">
             <div>{copyright}</div>
             <div className="flex items-center gap-4">
-              {links.slice(0, 2).map((link, index) => {
-                const isExternal = /^https?:\/\//.test(link.href);
+              {links.map((link, index) => {
+                const isExternal = /^https?:\/\//.test(link.href) || link.href.startsWith('mailto:');
                 return (
                   <a
                     key={index}
                     href={link.href}
                     {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  >
-                    {link.text}
-                  </a>
-                );
-              })}
-              {links.length > 2 && "|"}
-              {links.slice(2).map((link, index) => {
-                const isExternal = /^https?:\/\//.test(link.href);
-                return (
-                  <a
-                    key={index}
-                    href={link.href}
-                    {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    className="hover:text-primary transition-colors"
                   >
                     {link.text}
                   </a>
