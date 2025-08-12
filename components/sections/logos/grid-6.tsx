@@ -1,14 +1,14 @@
-import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 
-import Logo from "../../ui/logo";
-import { Section } from "../../ui/section";
+import Logo from "@/components/ui/logo";
 import Catalog from "../../logos/catalog";
-import PictelAI from "../../logos/pictelai";
 import CoreOS from "../../logos/coreos";
 import EasyTax from "../../logos/easytax";
-import Peregrin from "../../logos/peregrin";
 import LeapYear from "../../logos/leapyear";
+import Peregrin from "../../logos/peregrin";
+import PictelAI from "../../logos/pictelai";
+import { Section } from "../../ui/section";
 
 interface LogoItemProps {
   logo: ReactNode;

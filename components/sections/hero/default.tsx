@@ -1,10 +1,8 @@
-import { ArrowRightIcon } from "lucide-react";
 import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-import FlowScreenshotIllustration from "../../illustrations/flow-screenshot";
-import { Badge } from "../../ui/badge";
+import FlowScreenshotIllustration from "@/components/illustrations/flow-screenshot";
 import { Button, type ButtonProps } from "../../ui/button";
 import Glow from "../../ui/glow";
 import { Mockup, MockupFrame } from "../../ui/mockup";
@@ -22,7 +20,6 @@ interface HeroProps {
   title?: string;
   description?: string;
   mockup?: ReactNode | false;
-  badge?: ReactNode | false;
   buttons?: HeroButtonProps[] | false;
   className?: string;
 }
@@ -32,17 +29,6 @@ export default function Hero({
   description = "dex is a unified data platform that makes it easy to get answers, make decisions and automate processes.",
   mockup = (
     <FlowScreenshotIllustration className="w-full" />
-  ),
-  badge = (
-    <Badge variant="outline" className="animate-appear">
-      <span className="text-muted-foreground">
-        New version of Launch UI is out!
-      </span>
-      <a href="https://www.launchuicomponents.com/" className="flex items-center gap-1">
-        Get started
-        <ArrowRightIcon className="size-3" />
-      </a>
-    </Badge>
   ),
   buttons = [
     {
@@ -62,7 +48,6 @@ export default function Hero({
     >
       <div className="max-w-container mx-auto flex flex-col gap-12 pt-2 sm:gap-24">
         <div className="flex flex-col items-center gap-6 text-center sm:gap-12">
-          {badge !== false && badge}
           <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground relative z-10 inline-block bg-linear-to-r bg-clip-text text-4xl leading-tight font-semibold text-balance text-transparent drop-shadow-2xl sm:text-6xl sm:leading-tight md:text-8xl md:leading-tight">
             {title}
           </h1>
@@ -87,7 +72,7 @@ export default function Hero({
               ))}
             </div>
           )}
-          {mockup !== false && (
+          {mockup  && (
             <div className="relative w-full pt-12">
               <MockupFrame
                 className="animate-appear opacity-0 delay-700"

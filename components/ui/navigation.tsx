@@ -1,12 +1,12 @@
 "use client";
 
-import Link from "next/link";
 import * as React from "react";
 import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
 import LaunchUI from "../logos/launch-ui";
+import { NAV_LINKS } from "./navigation-links";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -45,21 +45,11 @@ interface NavigationProps {
 }
 
 export default function Navigation({
-  menuItems = [
-    {
-      title: "Getting started",
-      content: "default",
-    },
-    {
-      title: "Components",
-      content: "components",
-    },
-    {
-      title: "Documentation",
-      isLink: true,
-      href: "https://www.launchuicomponents.com/",
-    },
-  ],
+  menuItems = NAV_LINKS.map((link) => ({
+    title: link.title,
+    href: link.href,
+    isLink: true,
+  })),
   components = [
     {
       title: "Alert Dialog",
@@ -127,9 +117,12 @@ export default function Navigation({
           <NavigationMenuItem key={index}>
             {item.isLink ? (
               <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-                <Link href={item.href || ""}>
+                <a
+                  href={item.href || ""}
+                  {...(/^https?:\/\//.test(item.href || "") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                >
                   {item.title}
-                </Link>
+                </a>
               </NavigationMenuLink>
             ) : (
               <>

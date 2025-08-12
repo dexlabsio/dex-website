@@ -4,7 +4,7 @@ import * as React from "react";
 
 function FlowScreenshotIllustration({ className, ...props }: React.ComponentProps<"div">) {
   return (
-    <div className={cn("relative", className)} {...props}>
+    <div className={cn("relative aspect-[866/488] w-full", className)} {...props}>
       <Image
         src="/flow-screenshot.svg"
         alt="Flow Screenshot"

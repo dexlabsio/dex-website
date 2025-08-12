@@ -88,7 +88,7 @@ export default function TabsLeft({
   className,
 }: TabsLeftProps) {
   return (
-    <Section className={className}>
+    <Section id="solution" className={className}>
       <div className="max-w-container mx-auto flex flex-col gap-8 sm:gap-16">
         <div className="flex flex-col items-center gap-4 text-center sm:gap-8">
           <h2 className="text-center text-3xl font-semibold text-balance sm:text-5xl">

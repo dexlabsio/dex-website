@@ -9,6 +9,7 @@ import {
   NavbarRight,
 } from "@/components/ui/navbar";
 import Navigation from "@/components/ui/navigation";
+import { NAV_LINKS } from "@/components/ui/navigation-links";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import DexLogo from "../../logos/dex";
 import { Button, type ButtonProps } from "../../ui/button";
@@ -42,11 +43,7 @@ export default function Navbar({
   logo = <DexLogo src="/logo.png" alt="DexLabs" />,
   name = "",
   homeUrl = "/",
-  mobileLinks = [
-    { text: "Getting Started", href: "https://www.launchuicomponents.com/" },
-    { text: "Components", href: "https://www.launchuicomponents.com/" },
-    { text: "Documentation", href: "https://www.launchuicomponents.com/" },
-  ],
+  mobileLinks = NAV_LINKS.map((link) => ({ text: link.title, href: link.href })),
   actions = [
     { text: "Sign in", href: "https://app.dexlabs.io", isButton: false },
     {
@@ -83,7 +80,7 @@ export default function Navbar({
                   variant={action.variant || "default"}
                   asChild
                 >
-                  <a href={action.href}>
+                  <a href={action.href} {...(/^https?:\/\//.test(action.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
                     {action.icon}
                     {action.text}
                     {action.iconRight}
@@ -93,6 +90,7 @@ export default function Navbar({
                 <a
                   key={index}
                   href={action.href}
+                  {...(/^https?:\/\//.test(action.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="hidden text-sm md:block"
                 >
                   {action.text}
@@ -122,6 +120,7 @@ export default function Navbar({
                     <a
                       key={index}
                       href={link.href}
+                      {...(/^https?:\/\//.test(link.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                       className="text-muted-foreground hover:text-foreground"
                     >
                       {link.text}

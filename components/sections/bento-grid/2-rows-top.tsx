@@ -3,12 +3,12 @@ import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Section } from "../../ui/section";
 import {
-    Tile,
-    TileContent,
-    TileDescription,
-    TileLink,
-    TileTitle,
-    TileVisual,
+  Tile,
+  TileContent,
+  TileDescription,
+  TileLink,
+  TileTitle,
+  TileVisual,
 } from "../../ui/tile";
 // GlobeIllustration import removed as it is unused
 import CodeEditorIllustration from "../../illustrations/code-editor";
@@ -110,7 +110,7 @@ export default function BentoGrid({
   className,
 }: BentoGridProps) {
   return (
-    <Section className={cn("py-8 sm:py-12 md:py-20", className)}>
+    <Section id="product" className={cn("py-8 sm:py-12 md:py-20", className)}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-4 sm:gap-8">
         <h2 className="text-center text-3xl font-semibold text-balance sm:text-5xl">
           {title}
