@@ -18,11 +18,11 @@ function CodeEditorIllustration() {
               <div className="relative flex w-[320px]">
                 <div className="text-muted-foreground relative z-10 flex grow basis-0 items-center gap-2 px-4 py-1.5 text-xs">
                   <ReactLogo className="size-4" />
-                  <p>page.tsx</p>
+                  <p>orders.sql</p>
                 </div>
                 <div className="text-muted-foreground relative z-10 flex grow basis-0 items-center gap-2 px-4 py-1.5 text-xs">
                   <Tailwind className="size-4" />
-                  <p>globals.css</p>
+                  <p>payments.sql</p>
                 </div>
                 <div className="absolute top-0 left-0 h-full w-[50%] px-2 transition-all duration-1000 ease-in-out group-hover:left-[50%]">
                   <div className="glass-4 h-full w-full rounded-md shadow-md"></div>
@@ -32,254 +32,140 @@ function CodeEditorIllustration() {
             <div className="relative w-full grow overflow-hidden">
               <div className="absolute top-0 left-0 translate-x-0 px-8 transition-all duration-1000 ease-in-out group-hover:translate-x-[-100%] group-hover:opacity-0">
                 <pre className="text-muted-foreground font-mono text-xs">
-                  <span className="text-brand">import</span>
-                  <span className="text-muted-foreground"> {`{ `}</span>
-                  <span className="text-foreground">cn</span>
-                  <span className="text-muted-foreground"> {`}`} </span>
-                  <span className="text-brand">from </span>
-                  <span className="text-brand-foreground">
-                    &quot;@/lib/utils&quot;
-                  </span>
-                  <span className="text-muted-foreground">;</span>
+                  <span className="text-muted-foreground">{`{{`}</span>
                   {"\n"}
-                  <span className="text-brand">import</span>
-                  <span className="text-foreground"> clsx</span>
-                  <span className="text-brand"> from </span>
-                  <span className="text-brand-foreground">
-                    {" "}
-                    &quot;clsx&quot;
-                  </span>
-                  <span className="text-muted-foreground">;</span>
+                  <span className="text-muted-foreground">  </span>
+                  <span className="text-brand">config</span>
+                  <span className="text-muted-foreground">(</span>
                   {"\n"}
-                  <span className="text-brand">import</span>
-                  <span className="text-muted-foreground"> {`{ `}</span>
-                  <span className="text-foreground">PropsWithChildren</span>
-                  <span className="text-muted-foreground">{` }`} </span>
-                  <span className="text-brand">from </span>
-                  <span className="text-brand-foreground">
-                    &quot;react&quot;
-                  </span>
-                  <span className="text-muted-foreground">;</span>
+                  <span className="text-muted-foreground">    tags=</span>
+                  <span className="text-muted-foreground">[</span>
+                  <span className="text-brand-foreground">&apos;operations&apos;</span>
+                  <span className="text-muted-foreground">]</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">  )</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">{`}}`}</span>
+                  {"\n\n\n"}
+                  <span className="text-brand">with</span>
                   {"\n\n"}
-                  <span className="text-brand">type</span>
-                  <span className="text-foreground"> NoteProps</span>
-                  <span className="text-muted-foreground"> = </span>
-                  <span className="text-foreground">PropsWithChildren</span>
-                  <span className="text-muted-foreground"> & {`{`}</span>
+                  <span className="text-foreground">__orders_cte</span>
+                  <span className="text-muted-foreground"> </span>
+                  <span className="text-brand">as</span>
                   {"\n"}
-                  <span className="text-muted-foreground"> title?: </span>
-                  <span className="text-foreground">string</span>
-                  <span className="text-muted-foreground">;</span>
+                  <span className="text-muted-foreground">(</span>
                   {"\n"}
-                  <span className="text-muted-foreground"> type?: </span>
-                  <span className="text-brand-foreground">
-                    &quot;note&quot;
-                  </span>
-                  <span className="text-muted-foreground"> | </span>
-                  <span className="text-brand-foreground">
-                    &quot;danger&quot;
-                  </span>
-                  <span className="text-muted-foreground"> | </span>
-                  <span className="text-brand-foreground">
-                    &quot;warning&quot;
-                  </span>
-                  <span className="text-muted-foreground"> | </span>
-                  <span className="text-brand-foreground">
-                    &quot;success&quot;
-                  </span>
-                  <span className="text-muted-foreground">;</span>
+                  <span className="text-muted-foreground">    </span>
+                  <span className="text-brand">select</span>
                   {"\n"}
-                  <span className="text-muted-foreground"> className?: </span>
-                  <span className="text-foreground">string</span>
-                  <span className="text-muted-foreground">;</span>
+                  <span className="text-muted-foreground">        order_status </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> order_status,</span>
                   {"\n"}
-                  <span className="text-muted-foreground">{` }`}</span>
-                  <span className="text-muted-foreground">{`;`}</span>
+                  <span className="text-muted-foreground">        </span>
+                  <span className="text-brand">safe_cast</span>
+                  <span className="text-muted-foreground"> (order_delivered_customer_date </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> datetime) </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> order_delivered_customer_date,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        </span>
+                  <span className="text-brand">safe_cast</span>
+                  <span className="text-muted-foreground"> (order_purchase_timestamp </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> datetime) </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> order_purchase_timestamp,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        </span>
+                  <span className="text-brand">safe_cast</span>
+                  <span className="text-muted-foreground"> (order_estimated_delivery_date </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> datetime) </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> order_estimated_delivery_date,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        </span>
+                  <span className="text-brand">regexp_extract</span>
+                  <span className="text-muted-foreground">(customer_id,</span>
+                  <span className="text-brand-foreground">r&apos;^.{`{0,3}`}&apos;</span>
+                  <span className="text-muted-foreground">) </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> customer_id,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        order_id </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> order_id,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        </span>
+                  <span className="text-brand">safe_cast</span>
+                  <span className="text-muted-foreground"> (order_delivered_carrier_date </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> datetime) </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> order_delivered_carrier_date,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        </span>
+                  <span className="text-brand">safe_cast</span>
+                  <span className="text-muted-foreground"> (order_approved_at </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> datetime) </span>
+                  <span className="text-brand">as</span>
+                  <span className="text-muted-foreground"> order_approved_at</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">    </span>
+                  <span className="text-brand">from</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        </span>
+                  <span className="text-muted-foreground">{`{{ `}</span>
+                  <span className="text-brand">source</span>
+                  <span className="text-muted-foreground">(</span>
+                  <span className="text-brand-foreground">&apos;dex-dsm-ecommerce_landing&apos;</span>
+                  <span className="text-muted-foreground">, </span>
+                  <span className="text-brand-foreground">&apos;orders&apos;</span>
+                  <span className="text-muted-foreground">) </span>
+                  <span className="text-muted-foreground">{`}}`}</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">)</span>
                   {"\n\n"}
-                  <span className="text-brand">export default function</span>
-                  <span className="text-foreground"> Note</span>
-                  <span className="text-muted-foreground">{`({`}</span>
+                  <span className="text-brand">select</span>
                   {"\n"}
-                  <span className="text-muted-foreground"> children,</span>
+                  <span className="text-muted-foreground">*</span>
                   {"\n"}
-                  <span className="text-muted-foreground"> title = </span>
-                  <span className="text-brand-foreground">
-                    &quot;Note&quot;
-                  </span>
-                  <span className="text-muted-foreground">,</span>
+                  <span className="text-brand">from</span>
                   {"\n"}
-                  <span className="text-muted-foreground"> type = </span>
-                  <span className="text-brand-foreground">
-                    &quot;note&quot;
-                  </span>
-                  <span className="text-muted-foreground">,</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> className,</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">{` }`}</span>
-                  <span className="text-foreground">: </span>
-                  <span className="text-foreground">NoteProps</span>
-                  <span className="text-muted-foreground">{` ) {`}</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">
-                    {" "}
-                    const noteClassNames ={" "}
-                  </span>
-                  <span className="text-foreground">clsx</span>
-                  <span className="text-muted-foreground">{`({`}</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> </span>
-                  <span className="text-brand-foreground">
-                    &quot;dark:bg-stone-950/25 bg-stone-50&quot;
-                  </span>
-                  <span className="text-muted-foreground">: type == </span>
-                  <span className="text-brand-foreground">
-                    &quot;note&quot;
-                  </span>
-                  <span className="text-muted-foreground">,</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> </span>
-                  <span className="text-brand-foreground">
-                    &quot;dark:bg-red-950 bg-red-100 border-red-200
-                    dark:border-red-900&quot;
-                  </span>
-                  <span className="text-muted-foreground">:</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> type === </span>
-                  <span className="text-brand-foreground">
-                    &quot;danger&quot;
-                  </span>
-                  <span className="text-muted-foreground">,</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> </span>
-                  <span className="text-brand-foreground">
-                    &quot;dark:bg-orange-950 bg-orange-100 border-orange-200
-                    dark:border-orange-900&quot;
-                  </span>
-                  <span className="text-muted-foreground">:</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> type === </span>
-                  <span className="text-brand-foreground">
-                    &quot;warning&quot;
-                  </span>
-                  <span className="text-muted-foreground">,</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> </span>
-                  <span className="text-brand-foreground">
-                    &quot;dark:bg-green-950 bg-green-100 border-green-200
-                    dark:border-green-900&quot;
-                  </span>
-                  <span className="text-muted-foreground">:</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> type === </span>
-                  <span className="text-brand-foreground">
-                    &quot;success&quot;
-                  </span>
-                  <span className="text-muted-foreground">,</span>
-                  {"\n"}
-                  <span className="text-muted-foreground"> {` });`}</span>
+                  <span className="text-foreground">__orders_cte</span>
                 </pre>
               </div>
 
               <div className="absolute top-0 left-0 translate-x-[100%] px-8 opacity-0 transition-all duration-1000 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
                 <pre className="text-muted-foreground font-mono text-xs">
-                  <span className="text-brand">@import</span>
-                  <span className="text-brand-foreground">
-                    {" "}
-                    &quot;tailwindcss&quot;
-                  </span>
-                  <span className="text-muted-foreground">;</span>
+                  <span className="text-muted-foreground">    </span>
+                  <span className="text-brand">select</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        order_id,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        payment_type,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        payment_value,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        payment_installments,</span>
+                  {"\n"}
+                  <span className="text-muted-foreground">        payment_sequential</span>
                   {"\n\n"}
-                  <span className="text-brand">@plugin</span>
-                  <span className="text-brand-foreground">
-                    {" "}
-                    &quot;tailwindcss-animate&quot;
-                  </span>
-                  <span className="text-muted-foreground">;</span>
-                  {"\n\n"}
-                  <span className="text-brand">@import</span>
-                  <span className="text-brand-foreground">
-                    {" "}
-                    &quot;../styles/syntax.css&quot;
-                  </span>
-                  <span className="text-muted-foreground">
-                    {" "}
-                    layer(utilities);
-                  </span>
+                  <span className="text-muted-foreground">    </span>
+                  <span className="text-brand">from</span>
                   {"\n"}
-                  <span className="text-brand">@import</span>
-                  <span className="text-brand-foreground">
-                    {" "}
-                    &quot;../styles/theme.css&quot;
-                  </span>
-                  <span className="text-muted-foreground">
-                    {" "}
-                    layer(utilities);
-                  </span>
-                  {"\n\n"}
-                  <span className="text-brand">@custom-variant</span>
-                  <span className="text-foreground"> dark</span>
-                  <span className="text-muted-foreground">
-                    {" "}
-                    (&:where(.dark, .dark *));
-                  </span>
-                  {"\n\n"}
-                  <span className="text-brand">@theme</span>
-                  <span className="text-foreground"> inline</span>
-                  <span className="text-muted-foreground"> {`{`}</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">
-                    {" "}
-                    --color-brand:{" "}
-                  </span>
-                  <span className="text-foreground">var(--brand)</span>
-                  <span className="text-muted-foreground">;</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">
-                    {" "}
-                    --color-brand-foreground:{" "}
-                  </span>
-                  <span className="text-foreground">
-                    var(--brand-foreground)
-                  </span>
-                  <span className="text-muted-foreground">;</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">
-                    {" "}
-                    --color-light:{" "}
-                  </span>
-                  <span className="text-foreground">var(--light)</span>
-                  <span className="text-muted-foreground">;</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">
-                    {" "}
-                    --color-light-foreground:{" "}
-                  </span>
-                  <span className="text-foreground">
-                    var(--light-foreground)
-                  </span>
-                  <span className="text-muted-foreground">;</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">
-                    {" "}
-                    --color-background:{" "}
-                  </span>
-                  <span className="text-foreground">var(--background)</span>
-                  <span className="text-muted-foreground">;</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">
-                    {" "}
-                    --color-foreground:{" "}
-                  </span>
-                  <span className="text-foreground">var(--foreground)</span>
-                  <span className="text-muted-foreground">;</span>
-                  {"\n"}
-                  <span className="text-muted-foreground">
-                    {" "}
-                    --color-sidebar-ring:{" "}
-                  </span>
-                  <span className="text-foreground">var(--sidebar-ring)</span>
-                  <span className="text-muted-foreground">;</span>
+                  <span className="text-muted-foreground">        </span>
+                  <span className="text-muted-foreground">{`{{ `}</span>
+                  <span className="text-brand">source</span>
+                  <span className="text-muted-foreground">(</span>
+                  <span className="text-brand-foreground">&apos;dex-dsm-ecommerce_landing&apos;</span>
+                  <span className="text-muted-foreground">, </span>
+                  <span className="text-brand-foreground">&apos;order_payments&apos;</span>
+                  <span className="text-muted-foreground">) </span>
+                  <span className="text-muted-foreground">{`}}`}</span>
                 </pre>
               </div>
             </div>

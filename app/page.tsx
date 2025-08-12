@@ -4,8 +4,9 @@ import FooterSection from "@/components/sections/footer/minimal";
 import Hero from "@/components/sections/hero/default";
 import Logos from "@/components/sections/logos/grid-6";
 import Navbar from "@/components/sections/navbar/default";
-import Stats from "@/components/sections/stats/default";
+import Stats from "@/components/sections/stats/grid-boxed";
 import TabsLeft from "@/components/sections/tabs/left";
+import LogosDefault from "@/components/sections/logos/default"
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
     <BentoGrid/>
     <Stats/>
     <TabsLeft/>
+    <LogosDefault/>
+  
     <CTA/>
     <FooterSection/>
     </>

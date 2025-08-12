@@ -1,13 +1,6 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-import Logo from "@/components/ui/logo";
-import Catalog from "../../logos/catalog";
-import CoreOS from "../../logos/coreos";
-import EasyTax from "../../logos/easytax";
-import LeapYear from "../../logos/leapyear";
-import Peregrin from "../../logos/peregrin";
-import PictelAI from "../../logos/pictelai";
 import { Section } from "../../ui/section";
 
 interface LogoItemProps {
@@ -25,67 +18,55 @@ export default function Logos({
   logoItems = [
     {
       logo: (
-        <Logo
-          image={Catalog}
-          name="Catalog"
-          width={171}
-          height={54}
-          showName={false}
+        <img 
+          src="/Customers Logos/Caffeine Army.svg" 
+          alt="Caffeine Army" 
+          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
         />
       ),
     },
     {
       logo: (
-        <Logo
-          image={PictelAI}
-          name="PictelAI"
-          width={185}
-          height={54}
-          showName={false}
+        <img 
+          src="/Customers Logos/Insider.svg" 
+          alt="Insider" 
+          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
         />
       ),
     },
     {
       logo: (
-        <Logo
-          image={CoreOS}
-          name="CoreOS"
-          width={165}
-          height={54}
-          showName={false}
+        <img 
+          src="/Customers Logos/Linus.svg" 
+          alt="Linus" 
+          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
         />
       ),
     },
     {
       logo: (
-        <Logo
-          image={EasyTax}
-          name="EasyTax"
-          width={180}
-          height={54}
-          showName={false}
+        <img 
+          src="/Customers Logos/Minimal Club.svg" 
+          alt="Minimal Club" 
+          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
         />
       ),
     },
     {
       logo: (
-        <Logo
-          image={Peregrin}
-          name="Peregrin"
-          width={185}
-          height={54}
-          showName={false}
+        <img 
+          src="/Customers Logos/Robbin.svg" 
+          alt="Robbin" 
+          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
         />
       ),
     },
     {
       logo: (
-        <Logo
-          image={LeapYear}
-          name="LeapYear"
-          width={185}
-          height={54}
-          showName={false}
+        <img 
+          src="/Customers Logos/hubii.svg" 
+          alt="Hubii" 
+          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
         />
       ),
     },

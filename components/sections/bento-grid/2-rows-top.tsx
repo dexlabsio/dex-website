@@ -51,12 +51,9 @@ export default function BentoGrid({
     {
       title: "Develop",
       description: (
-        <>
-          <p className="max-w-[320px] lg:max-w-[460px]">
-            Define, test, and document your transformations with a modern, AI-assisted workflow.
-          </p>
-          <p>Build in minutes with native Git integration, automated lineage tracking, and built-in linting.</p>
-        </>
+        <p className="max-w-[320px] lg:max-w-[460px]">
+          Define, test, and document your transformations with a modern, AI-assisted workflow. Build in minutes with native Git integration, automated lineage tracking, and built-in linting.
+        </p>
       ),
       visual: (
         <div className="min-h-[240px] w-full grow items-center self-center p-4 lg:px-12">
@@ -73,8 +70,12 @@ export default function BentoGrid({
         </p>
       ),
       visual: (
-        <div className="min-h-[300px] w-full py-12">
-          <CodeEditorIllustration />
+        <div className="min-h-[300px] w-full py-12 flex items-center justify-center">
+          <img 
+            src="/orchestration_light.svg" 
+            alt="Orchestration workflow" 
+            className="max-w-full max-h-full object-contain"
+          />
         </div>
       ),
       size: "col-span-12 md:col-span-6 lg:col-span-4",

@@ -26,27 +26,35 @@ interface TabsLeftProps {
 }
 
 export default function TabsLeft({
-  title = "Make the right impression",
-  description = "Launch UI makes it easy to build an unforgetable website that resonates with professional design-centric audiences.",
+  title = "Choose dex for speed, trust, and delivering real results",
+  description = "Join industry-leading companies using dex to accelerate analytics, lower costs, and achieve extraordinary outcomes",
   defaultTab = "choose-sections",
   tabs = [
     {
       value: "choose-sections",
-      title: "Choose your sections",
+      title: "Sales",
       description:
-        "Choose among 100+ components to build a landing page suited to the needs of your product.",
+        "Track revenue, orders, and product performance with high-quality, reliable data",
       icon: <BlocksIcon className="size-4 shrink-0 stroke-1 md:h-5 md:w-5" />,
       content: (
-        <div className="w-full flex items-center justify-center">
-          Image
-        </div>
+        <MockupFrame size="small">
+          <Mockup type="responsive">
+            <Screenshot
+              srcLight="/develop_light.png"
+              srcDark="/develop_light.png"
+              alt="Dex development platform"
+              width={1248}
+              height={765}
+            />
+          </Mockup>
+        </MockupFrame>
       ),
     },
     {
       value: "add-content",
-      title: "Add your content",
+      title: "Finance",
       description:
-        "Fill the blanks with screenshots, videos, and other content featuring your product.",
+        "Track payments, transactions, payables, receivables, and cash flow with accurate, real-time financial data",
       icon: (
         <SquarePenIcon className="size-4 shrink-0 stroke-1 md:h-5 md:w-5" />
       ),
@@ -66,9 +74,9 @@ export default function TabsLeft({
     },
     {
       value: "customize",
-      title: "Customize",
+      title: "Operations",
       description:
-        "Make design yours in no time by changing the variables that control colors, typography, and other styles.",
+        "Optimize inventory, supply chain, logistics, and customer support with comprehensive operational insights and performance data",
       icon: <PaletteIcon className="size-4 shrink-0 stroke-1 md:h-5 md:w-5" />,
       content: (
         <MockupFrame size="small">
@@ -77,6 +85,26 @@ export default function TabsLeft({
               srcLight="/app-settings-light.png"
               srcDark="/app-settings-dark.png"
               alt="Launch UI app screenshot"
+              width={1248}
+              height={765}
+            />
+          </Mockup>
+        </MockupFrame>
+      ),
+    },
+    {
+      value: "marketing",
+      title: "Marketing",
+      description:
+        "Track campaign performance, ROI, growth metrics, and attribution with marketing data that optimizes media spend and performance",
+      icon: <PaletteIcon className="size-4 shrink-0 stroke-1 md:h-5 md:w-5" />,
+      content: (
+        <MockupFrame size="small">
+          <Mockup type="responsive">
+            <Screenshot
+              srcLight="/develop_light.png"
+              srcDark="/develop_light.png"
+              alt="Dex marketing platform"
               width={1248}
               height={765}
             />
