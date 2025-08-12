@@ -3,10 +3,11 @@ import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 import FlowScreenshotIllustration from "@/components/illustrations/flow-screenshot";
-import { Button, type ButtonProps } from "../../ui/button";
-import Glow from "../../ui/glow";
-import { Mockup, MockupFrame } from "../../ui/mockup";
-import { Section } from "../../ui/section";
+import { Button, ButtonProps } from "@/components/ui/button";
+import Glow from "@/components/ui/glow";
+import { Mockup, MockupFrame } from "@/components/ui/mockup";
+import { Section } from "@/components/ui/section";
+  
 
 interface HeroButtonProps {
   href: string;

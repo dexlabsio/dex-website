@@ -1,33 +1,27 @@
 import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { createClient } from '@supabase/supabase-js';
+import { Resend } from 'resend';
 
-// Database interface (you can replace this with your preferred database)
+// Database interface
 interface DemoRequest {
   id?: string;
   name: string;
   email: string;
   company: string;
-  jobRole: string;
+  job_role: string;
   cloud: string;
   message?: string;
-  submittedAt: Date;
+  submitted_at?: string;
 }
 
-// Simple in-memory storage (replace with your database)
-const demoRequests: DemoRequest[] = [];
+// Initialize Supabase client
+const supabase = createClient(
+  process.env.SUPABASE_URL!,
+  process.env.SUPABASE_ANON_KEY!
+);
 
-// Email transporter setup
-const createTransporter = () => {
-  return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: false,
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-};
+// Initialize Resend client
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 // Email template
 const createEmailHTML = (data: DemoRequest) => {
@@ -73,7 +67,7 @@ const createEmailHTML = (data: DemoRequest) => {
           
           <div class="field">
             <span class="label">Job Role</span>
-            <div class="value">${data.jobRole}</div>
+            <div class="value">${data.job_role}</div>
           </div>
           
           <div class="field">
@@ -90,7 +84,7 @@ const createEmailHTML = (data: DemoRequest) => {
           
           <div class="field">
             <span class="label">Submitted At</span>
-            <div class="value">${data.submittedAt.toLocaleString()}</div>
+            <div class="value">${data.submitted_at}</div>
           </div>
         </div>
         
@@ -119,43 +113,42 @@ export async function POST(request: NextRequest) {
 
     // Create demo request object
     const demoRequest: DemoRequest = {
-      id: Date.now().toString(),
       name,
       email,
       company,
-      jobRole,
+      job_role: jobRole,
       cloud,
       message: message || '',
-      submittedAt: new Date(),
     };
 
-    // Store in database (currently in-memory, replace with your database)
-    demoRequests.push(demoRequest);
-    console.log('Demo request stored:', demoRequest);
+    // Store in Supabase database
+    const { data: insertedData, error: dbError } = await supabase
+      .from('demo_requests')
+      .insert([demoRequest])
+      .select()
+      .single();
 
-    // Send email notifications
+    if (dbError) {
+      console.error('Database error:', dbError);
+      return NextResponse.json(
+        { error: 'Failed to save demo request' },
+        { status: 500 }
+      );
+    }
+
+    console.log('Demo request stored:', insertedData);
+
+    // Send email notifications with Resend
     try {
-      const transporter = createTransporter();
-      
-      const mailOptions = {
-        from: process.env.SMTP_FROM || 'noreply@dexlabs.io',
+      await resend.emails.send({
+        from: 'noreply@dexlabs.io',
         to: ['gustavo.beltrami@dexlabs.io', 'support@dexlabs.io'],
         subject: `New Demo Request from ${name} at ${company}`,
-        html: createEmailHTML(demoRequest),
-        text: `
-New Demo Request
-
-Name: ${name}
-Email: ${email}
-Company: ${company}
-Job Role: ${jobRole}
-Cloud Provider: ${cloud}
-Message: ${message || 'None'}
-Submitted: ${demoRequest.submittedAt.toLocaleString()}
-        `,
-      };
-
-      await transporter.sendMail(mailOptions);
+        html: createEmailHTML({
+          ...demoRequest,
+          submitted_at: insertedData.submitted_at
+        }),
+      });
       console.log('Email sent successfully');
       
     } catch (emailError) {
@@ -167,7 +160,7 @@ Submitted: ${demoRequest.submittedAt.toLocaleString()}
       { 
         success: true, 
         message: 'Demo request submitted successfully',
-        id: demoRequest.id 
+        id: insertedData.id 
       },
       { status: 200 }
     );
@@ -192,10 +185,23 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
+    const { data: demoRequests, error } = await supabase
+      .from('demo_requests')
+      .select('*')
+      .order('submitted_at', { ascending: false });
+
+    if (error) {
+      console.error('Database error:', error);
+      return NextResponse.json(
+        { error: 'Failed to fetch demo requests' },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json({
       success: true,
       data: demoRequests,
-      total: demoRequests.length
+      total: demoRequests?.length || 0
     });
     
   } catch (error) {
