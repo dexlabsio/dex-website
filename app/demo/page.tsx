@@ -53,6 +53,9 @@ export default function DemoPage() {
           cloud: "",
           message: "",
         });
+
+        // Open scheduling link in a new tab on successful submission
+        window.open('https://app.reclaim.ai/m/gustavo-beltrami/intro', '_blank', 'noopener,noreferrer');
       } else {
         setSubmitStatus({
           type: 'error',

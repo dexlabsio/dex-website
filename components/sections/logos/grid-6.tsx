@@ -1,5 +1,8 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { ReactNode } from "react";
+
+const logoImageClassName = "h-36 w-auto opacity-70 object-contain";
 
 import { Section } from "../../ui/section";
 
@@ -18,56 +21,32 @@ export default function Logos({
   logoItems = [
     {
       logo: (
-        <img 
-          src="/Customers Logos/Caffeine Army.svg" 
-          alt="Caffeine Army" 
-          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
-        />
+        <Image src="/Customers Logos/Caffeine Army.svg" alt="Caffeine Army" width={720} height={180} className={logoImageClassName} />
       ),
     },
     {
       logo: (
-        <img 
-          src="/Customers Logos/Insider.svg" 
-          alt="Insider" 
-          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
-        />
+        <Image src="/Customers Logos/Insider.svg" alt="Insider" width={720} height={180} className={logoImageClassName} />
       ),
     },
     {
       logo: (
-        <img 
-          src="/Customers Logos/Linus.svg" 
-          alt="Linus" 
-          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
-        />
+        <Image src="/Customers Logos/Linus.svg" alt="Linus" width={720} height={180} className={logoImageClassName} />
       ),
     },
     {
       logo: (
-        <img 
-          src="/Customers Logos/Minimal Club.svg" 
-          alt="Minimal Club" 
-          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
-        />
+        <Image src="/Customers Logos/Minimal Club.svg" alt="Minimal Club" width={720} height={180} className={logoImageClassName} />
       ),
     },
     {
       logo: (
-        <img 
-          src="/Customers Logos/Robbin.svg" 
-          alt="Robbin" 
-          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
-        />
+        <Image src="/Customers Logos/Robbin.svg" alt="Robbin" width={720} height={180} className={logoImageClassName} />
       ),
     },
     {
       logo: (
-        <img 
-          src="/Customers Logos/hubii.svg" 
-          alt="Hubii" 
-          className="h-12 w-auto max-w-[120px] opacity-70 object-contain"
-        />
+        <Image src="/Customers Logos/hubii.svg" alt="Hubii" width={720} height={180} className={logoImageClassName} />
       ),
     },
   ],
@@ -81,7 +60,7 @@ export default function Logos({
           {logoItems.map((item, index) => (
             <div
               key={index}
-              className="bg-background flex aspect-2/1 items-center justify-center p-6"
+              className="bg-background flex aspect-2/1 items-center justify-center p-6 md:p-8 lg:p-10"
             >
               {item.logo}
             </div>
