@@ -1,20 +1,20 @@
 import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
-import {
-  Tile,
-  TileVisual,
-  TileTitle,
-  TileDescription,
-  TileContent,
-  TileLink,
-} from "../../ui/tile";
 import { Section } from "../../ui/section";
-import GlobeIllustration from "../../illustrations/globe";
-import PipelineIllustration from "../../illustrations/pipeline";
+import {
+    Tile,
+    TileContent,
+    TileDescription,
+    TileLink,
+    TileTitle,
+    TileVisual,
+} from "../../ui/tile";
+// GlobeIllustration import removed as it is unused
 import CodeEditorIllustration from "../../illustrations/code-editor";
-import TilesIllustration from "../../illustrations/tiles";
+import PipelineIllustration from "../../illustrations/pipeline";
 import RippleIllustration from "../../illustrations/ripple";
+import TilesIllustration from "../../illustrations/tiles";
 
 interface TileProps {
   title: string;

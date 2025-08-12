@@ -1,14 +1,14 @@
 "use client";
 
-import { ReactNode } from "react";
 import { BlocksIcon, PaletteIcon, SquarePenIcon } from "lucide-react";
+import { ReactNode } from "react";
 
+import Glow from "@/components/ui/glow";
+import { Mockup, MockupFrame } from "@/components/ui/mockup";
+import Screenshot from "@/components/ui/screenshot";
+import { DashboardEmbed } from "../../dashboard-embed";
 import { Section } from "../../ui/section";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
-import { Mockup, MockupFrame } from "../../ui/mockup";
-import Glow from "../../ui/glow";
-import Screenshot from "../../ui/screenshot";
-import { DashboardEmbed } from "../../dashboard-embed";
 
 interface TabProps {
   value: string;

@@ -1,12 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Section } from "@/components/ui/section";
+import FooterSection from "@/components/sections/footer/minimal";
+import Navbar from "@/components/sections/navbar/default";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { cn } from "@/lib/utils";
-import Navbar from "@/components/sections/navbar/default";
-import FooterSection from "@/components/sections/footer/minimal";
+import { Section } from "@/components/ui/section";
+import { useState } from "react";
 
 export default function DemoPage() {
   const [formData, setFormData] = useState({
@@ -63,7 +62,7 @@ export default function DemoPage() {
     } catch (error) {
       setSubmitStatus({
         type: 'error',
-        message: 'Network error. Please check your connection and try again.'
+        message: 'Network error. Please check your connection and try again. ' + error
       });
     } finally {
       setIsSubmitting(false);
@@ -87,7 +86,7 @@ export default function DemoPage() {
               </h1>
               <p className="text-lg text-muted-foreground max-w-[600px] mx-auto">
                 Ready to see how dex can transform your data workflows? 
-                Fill out the form below and we'll get in touch to schedule your personalized demo.
+                Fill out the form below and we`ll get in touch to schedule your personalized demo.
               </p>
             </div>
 

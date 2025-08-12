@@ -3,17 +3,17 @@ import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-import DexLogo from "../../logos/dex";
-import { Button, type ButtonProps } from "../../ui/button";
 import {
   Navbar as NavbarComponent,
   NavbarLeft,
   NavbarRight,
-} from "../../ui/navbar";
-import Navigation from "../../ui/navigation";
-import { Sheet, SheetContent, SheetTrigger } from "../../ui/sheet";
+} from "@/components/ui/navbar";
+import Navigation from "@/components/ui/navigation";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import DexLogo from "../../logos/dex";
+import { Button, type ButtonProps } from "../../ui/button";
 
-interface NavbarLink {
+interface NavbarLink {  
   text: string;
   href: string;
 }
@@ -39,7 +39,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  logo = <DexLogo />,
+  logo = <DexLogo src="/logo.png" alt="DexLabs" />,
   name = "",
   homeUrl = "/",
   mobileLinks = [
