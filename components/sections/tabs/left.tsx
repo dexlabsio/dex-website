@@ -6,7 +6,6 @@ import { ReactNode } from "react";
 import Glow from "@/components/ui/glow";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
 import Screenshot from "@/components/ui/screenshot";
-import { DashboardEmbed } from "../../dashboard-embed";
 import { Section } from "../../ui/section";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../../ui/tabs";
 
@@ -39,7 +38,7 @@ export default function TabsLeft({
       icon: <BlocksIcon className="size-4 shrink-0 stroke-1 md:h-5 md:w-5" />,
       content: (
         <div className="w-full flex items-center justify-center">
-          <DashboardEmbed />
+          Image
         </div>
       ),
     },
