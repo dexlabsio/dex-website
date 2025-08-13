@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "dex",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/dex-logo-light.png",
         width: 1200,
         height: 630,
         alt: "dex - Unified Data Platform",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "dex - Unified Data Platform",
     description: "Build reliable data pipelines, automate workflows, and get insights faster with our unified data platform.",
-    images: ["/og-image.jpg"],
+    images: ["/dex-logo-light.png"],
     creator: "@dexlabs",
     site: "@dexlabs",
   },
@@ -100,6 +100,20 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta property="og:title" content="dex - Unified Data Platform" />
+        <meta property="og:description" content="A unified data platform that helps teams build reliable data pipelines, automate workflows, and get insights faster." />
+        <meta property="og:url" content="https://www.dexlabs.io" />
+        <meta property="og:site_name" content="dex" />
+        <meta property="og:image" content="https://www.dexlabs.io/dex-logo-light.png" />
+        <meta property="og:type" content="website" />
+        
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="dex - Unified Data Platform" />
+        <meta name="twitter:description" content="Build reliable data pipelines, automate workflows, and get insights faster with our unified data platform." />
+        <meta name="twitter:image" content="https://www.dexlabs.io/dex-logo-light.png" />
+        <meta name="twitter:creator" content="@dexlabs" />
+        <meta name="twitter:site" content="@dexlabs" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
