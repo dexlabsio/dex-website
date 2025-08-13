@@ -61,10 +61,10 @@ export default function TabsLeft({
       content: (
         <MockupFrame size="small">
           <Mockup type="responsive">
-            <Screenshot
-              srcLight="/app-mail-light.png"
-              srcDark="/app-mail-dark.png"
-              alt="Launch UI app screenshot"
+          <Screenshot
+              srcLight="/develop_light.png"
+              srcDark="/develop_light.png"
+              alt="Dex development platform"
               width={1248}
               height={765}
             />
@@ -81,10 +81,10 @@ export default function TabsLeft({
       content: (
         <MockupFrame size="small">
           <Mockup type="responsive">
-            <Screenshot
-              srcLight="/app-settings-light.png"
-              srcDark="/app-settings-dark.png"
-              alt="Launch UI app screenshot"
+          <Screenshot
+              srcLight="/develop_light.png"
+              srcDark="/develop_light.png"
+              alt="Dex development platform"
               width={1248}
               height={765}
             />
@@ -101,10 +101,10 @@ export default function TabsLeft({
       content: (
         <MockupFrame size="small">
           <Mockup type="responsive">
-            <Screenshot
+          <Screenshot
               srcLight="/develop_light.png"
               srcDark="/develop_light.png"
-              alt="Dex marketing platform"
+              alt="Dex development platform"
               width={1248}
               height={765}
             />

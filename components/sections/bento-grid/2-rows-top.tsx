@@ -2,12 +2,12 @@ import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import { Section } from "../../ui/section";
 
-import GlobeIllustration from "../../illustrations/globe";
+import { Tile, TileContent, TileDescription, TileTitle, TileVisual } from "@/components/ui/tile";
 import CodeEditorIllustration from "../../illustrations/code-editor";
+import GlobeIllustration from "../../illustrations/globe";
 import PipelineIllustration from "../../illustrations/pipeline";
 import RippleIllustration from "../../illustrations/ripple";
 import TilesIllustration from "../../illustrations/tiles";
-import { Tile, TileLink, TileContent, TileTitle, TileDescription, TileVisual } from "@/components/ui/tile";
 
 interface TileProps {
   title: string;
@@ -115,7 +115,7 @@ export default function BentoGrid({
                 key={index} 
                 className={cn(tile.size)}
               >
-                <TileLink />
+                
                 <TileContent>
                   <TileTitle>{tile.title}</TileTitle>
                   <TileDescription>{tile.description}</TileDescription>
