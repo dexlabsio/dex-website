@@ -48,7 +48,24 @@ export default function Logos({
     { logo: <LogoImage name="Caffeine Army" alt="Caffeine Army" /> },
     { logo: <LogoImage name="Insider" alt="Insider" /> },
     { logo: <LogoImage name="Linus" alt="Linus" /> },
-    { logo: <LogoImage name="Minimal Club" alt="Minimal Club" /> },
+    { logo: (
+      <>
+        <Image 
+          src="/Customers Logos/Moon Ventures (3).svg" 
+          alt="Moon Ventures" 
+          width={720}
+          height={180}
+          className={`${logoImageClassName} dark:hidden`}
+        />
+        <Image 
+          src="/clients_logo_dark/Moon Ventures_dark mode.svg" 
+          alt="Moon Ventures" 
+          width={720}
+          height={180}
+          className={`${logoImageClassName} hidden dark:block`}
+        />
+      </>
+    ) },
     { logo: <LogoImage name="Robbin" alt="Robbin" /> },
     { logo: <LogoImage name="hubii" alt="Hubii" /> },
   ],

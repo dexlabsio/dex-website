@@ -8,6 +8,7 @@ import PipelineIllustration from "../../illustrations/pipeline";
 import RippleIllustration from "../../illustrations/ripple";
 import TilesIllustration from "../../illustrations/tiles";
 import { Tile, TileLink, TileContent, TileTitle, TileDescription, TileVisual } from "@/components/ui/tile";
+import Glow from "@/components/ui/glow";
 
 interface TileProps {
   title: string;
@@ -63,8 +64,18 @@ export default function BentoGrid({
         </p>
       ),
       visual: (
-        <div className="min-h-[300px] w-full py-12 flex items-center justify-center">
-          <GlobeIllustration />
+        <div className="min-h-[300px] w-full py-12 flex items-center justify-center relative">
+          <img 
+            src="/bento_icons/orchestrate_light.svg" 
+            alt="Dex orchestration platform" 
+            className="w-full h-auto max-w-[400px] object-contain dark:hidden relative z-10"
+          />
+          <img 
+            src="/bento_icons/orchestrate_Dark.svg" 
+            alt="Dex orchestration platform" 
+            className="w-full h-auto max-w-[400px] object-contain hidden dark:block relative z-10"
+          />
+          <Glow variant="center" className="scale-75 opacity-60" />
         </div>
       ),
       size: "col-span-12 md:col-span-6 lg:col-span-4",

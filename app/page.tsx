@@ -18,7 +18,6 @@ export default function Home() {
     <Stats/>
     <TabsLeft/>
     <LogosDefault/>
-  
     <CTA/>
     <FooterSection/>
     </>
