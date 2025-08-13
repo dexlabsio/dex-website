@@ -40,11 +40,12 @@ export default function TabsLeft({
         <MockupFrame size="small">
           <Mockup type="responsive">
             <Screenshot
-              srcLight="/develop_light.png"
-              srcDark="/develop_light.png"
+              srcLight="/develop_light.webp"
+              srcDark="/develop_light.webp"
               alt="Dex development platform"
               width={1248}
               height={765}
+              priority={true}
             />
           </Mockup>
         </MockupFrame>
@@ -62,8 +63,8 @@ export default function TabsLeft({
         <MockupFrame size="small">
           <Mockup type="responsive">
           <Screenshot
-              srcLight="/develop_light.png"
-              srcDark="/develop_light.png"
+              srcLight="/develop_light.webp"
+              srcDark="/develop_light.webp"
               alt="Dex development platform"
               width={1248}
               height={765}
@@ -82,8 +83,8 @@ export default function TabsLeft({
         <MockupFrame size="small">
           <Mockup type="responsive">
           <Screenshot
-              srcLight="/develop_light.png"
-              srcDark="/develop_light.png"
+              srcLight="/develop_light.webp"
+              srcDark="/develop_light.webp"
               alt="Dex development platform"
               width={1248}
               height={765}
@@ -102,8 +103,8 @@ export default function TabsLeft({
         <MockupFrame size="small">
           <Mockup type="responsive">
           <Screenshot
-              srcLight="/develop_light.png"
-              srcDark="/develop_light.png"
+              srcLight="/develop_light.webp"
+              srcDark="/develop_light.webp"
               alt="Dex development platform"
               width={1248}
               height={765}

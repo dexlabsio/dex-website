@@ -9,7 +9,13 @@
       "Bash(rm:*)",
       "Bash(mv:*)",
       "Bash(npm run build:*)",
-      "Bash(npx knip:*)"
+      "Bash(npx knip:*)",
+      "Bash(powershell:*)",
+      "Bash(forfiles:*)",
+      "Bash(npm i:*)",
+      "Bash(imagemin:*)",
+      "Bash(svgo:*)",
+      "Bash(dir:*)"
     ],
     "deny": [],
     "ask": []

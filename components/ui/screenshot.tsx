@@ -13,6 +13,7 @@ interface ScreenshotProps {
   width: number;
   height: number;
   className?: string;
+  priority?: boolean;
 }
 
 export default function Screenshot({
@@ -22,6 +23,7 @@ export default function Screenshot({
   width,
   height,
   className,
+  priority = false,
 }: ScreenshotProps) {
   const { resolvedTheme } = useTheme();
   const [src, setSrc] = useState<string | null>(null);
@@ -42,13 +44,22 @@ export default function Screenshot({
     );
   }
 
+  // Check if this is a WebP source and create PNG fallback
+  const isWebP = src.endsWith('.webp');
+  const webpSrc = isWebP ? src : src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
+  const pngSrc = isWebP ? src.replace(/\.webp$/i, '.png') : src;
+  
   return (
-    <Image
-      src={src}
-      alt={alt}
-      width={width}
-      height={height}
-      className={className}
-    />
+    <picture>
+      <source srcSet={webpSrc} type="image/webp" />
+      <Image
+        src={pngSrc}
+        alt={alt}
+        width={width}
+        height={height}
+        className={className}
+        priority={priority}
+      />
+    </picture>
   );
 }
