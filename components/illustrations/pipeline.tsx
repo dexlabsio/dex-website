@@ -1,6 +1,4 @@
-import { Boxes, Globe } from "lucide-react";
-import * as React from "react";
-import LaunchUI from "../logos/launch-ui";
+import { Boxes } from "lucide-react";
 import { Beam } from "../ui/beam";
 import Glow from "../ui/glow";
 
@@ -14,7 +12,16 @@ function PipelineIllustration() {
         <div className="border-border dark:border-border/5 dark:inset-shadow-lg inset-shadow-brand/10 flex items-center justify-center rounded-full border p-2 lg:p-3">
           <div className="border-border dark:border-border/15 dark:inset-shadow-lg inset-shadow-brand/20 flex items-center justify-center rounded-full border p-2 lg:p-3">
             <div className="glass-4 relative z-10 flex size-8 items-center justify-center rounded-full shadow-md backdrop-blur-lg transition-all duration-1000 ease-in-out group-hover:scale-95 sm:size-12 lg:size-16">
-              <Boxes className="size-6 stroke-1 sm:size-8" />
+              <img 
+                src="/bento_icons/icons8-computer-chip-100_light.png" 
+                alt="Computer Chip" 
+                className="size-6 sm:size-8 dark:hidden"
+              />
+              <img 
+                src="/bento_icons/icons8-computer-chip-100_dark.png" 
+                alt="Computer Chip" 
+                className="size-6 sm:size-8 hidden dark:block"
+              />
             </div>
           </div>
         </div>
@@ -24,7 +31,16 @@ function PipelineIllustration() {
               <div className="glass-4 relative z-10 flex size-12 items-center justify-center rounded-full shadow-md backdrop-blur-lg transition-all duration-1000 ease-in-out group-hover:scale-105 sm:size-20 lg:size-24">
                 <Beam tone="brandLight">
                   <div className="relative z-10">
-                    <LaunchUI className="size-6 sm:size-8" />
+                    <img 
+                      src="/dex-logo-light.png" 
+                      alt="Dex Logo" 
+                      className="h-6 w-auto sm:h-8 dark:hidden"
+                    />
+                    <img 
+                      src="/dex-logo-dark.png" 
+                      alt="Dex Logo" 
+                      className="h-6 w-auto sm:h-8 hidden dark:block"
+                    />
                   </div>
                 </Beam>
               </div>
@@ -38,7 +54,7 @@ function PipelineIllustration() {
         <div className="border-border dark:border-border/5 dark:inset-shadow-lg inset-shadow-brand/10 flex items-center justify-center rounded-full border p-2 lg:p-3">
           <div className="border-border dark:border-border/15 dark:inset-shadow-lg inset-shadow-brand/20 flex items-center justify-center rounded-full border p-2 lg:p-3">
             <div className="glass-4 relative z-10 flex size-8 items-center justify-center rounded-full shadow-md backdrop-blur-lg transition-all duration-1000 ease-in-out group-hover:scale-95 sm:size-12 lg:size-16">
-              <Globe className="size-6 stroke-1 sm:size-8" />
+              <Boxes className="size-6 stroke-1 sm:size-8" />
             </div>
           </div>
         </div>

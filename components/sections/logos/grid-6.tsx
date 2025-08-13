@@ -2,9 +2,35 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ReactNode } from "react";
 
-const logoImageClassName = "h-36 w-auto opacity-70 object-contain";
+const logoImageClassName = "h-26 w-auto max-w-[250px] opacity-70 object-contain";
 
 import { Section } from "../../ui/section";
+
+interface LogoImageProps {
+  name: string;
+  alt: string;
+}
+
+function LogoImage({ name, alt }: LogoImageProps) {
+  return (
+    <>
+      <Image 
+        src={`/Customers Logos/${name}.svg`} 
+        alt={alt} 
+        width={720}
+        height={180}
+        className={`${logoImageClassName} dark:hidden`}
+      />
+      <Image 
+        src={`/clients_logo_dark/${name}.svg`} 
+        alt={alt} 
+        width={720}
+        height={180}
+        className={`${logoImageClassName} hidden dark:block`}
+      />
+    </>
+  );
+}
 
 interface LogoItemProps {
   logo: ReactNode;
@@ -19,36 +45,12 @@ interface LogosProps {
 export default function Logos({
   title = "Trusted by world's leading companies",
   logoItems = [
-    {
-      logo: (
-        <Image src="/Customers Logos/Caffeine Army.svg" alt="Caffeine Army" width={720} height={180} className={logoImageClassName} />
-      ),
-    },
-    {
-      logo: (
-        <Image src="/Customers Logos/Insider.svg" alt="Insider" width={720} height={180} className={logoImageClassName} />
-      ),
-    },
-    {
-      logo: (
-        <Image src="/Customers Logos/Linus.svg" alt="Linus" width={720} height={180} className={logoImageClassName} />
-      ),
-    },
-    {
-      logo: (
-        <Image src="/Customers Logos/Minimal Club.svg" alt="Minimal Club" width={720} height={180} className={logoImageClassName} />
-      ),
-    },
-    {
-      logo: (
-        <Image src="/Customers Logos/Robbin.svg" alt="Robbin" width={720} height={180} className={logoImageClassName} />
-      ),
-    },
-    {
-      logo: (
-        <Image src="/Customers Logos/hubii.svg" alt="Hubii" width={720} height={180} className={logoImageClassName} />
-      ),
-    },
+    { logo: <LogoImage name="Caffeine Army" alt="Caffeine Army" /> },
+    { logo: <LogoImage name="Insider" alt="Insider" /> },
+    { logo: <LogoImage name="Linus" alt="Linus" /> },
+    { logo: <LogoImage name="Minimal Club" alt="Minimal Club" /> },
+    { logo: <LogoImage name="Robbin" alt="Robbin" /> },
+    { logo: <LogoImage name="hubii" alt="Hubii" /> },
   ],
   className,
 }: LogosProps) {
@@ -60,7 +62,7 @@ export default function Logos({
           {logoItems.map((item, index) => (
             <div
               key={index}
-              className="bg-background flex aspect-2/1 items-center justify-center p-6 md:p-8 lg:p-10"
+              className="bg-background flex aspect-2/1 items-center justify-center "
             >
               {item.logo}
             </div>

@@ -14,7 +14,16 @@ function RippleIllustration() {
             <div className="glass-5 border-brand-foreground/40 dark:border-border/10 flex h-full w-full items-center justify-center rounded-full p-2.5 shadow-md">
               <Beam tone="brand">
                 <div className="relative z-10">
-                  <LaunchUI className="text-foreground size-16" />
+                  <img 
+                    src="/bento_icons/icons8-dollar-sign-100_light.png" 
+                    alt="Dollar Sign" 
+                    className="size-16 dark:hidden"
+                  />
+                  <img 
+                    src="/bento_icons/icons8-dollar-sign-100_dark.png" 
+                    alt="Dollar Sign" 
+                    className="size-16 hidden dark:block"
+                  />
                 </div>
               </Beam>
             </div>
