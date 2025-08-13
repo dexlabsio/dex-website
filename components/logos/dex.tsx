@@ -1,4 +1,3 @@
-import * as React from "react";
 import DualThemeLogo from "../ui/dual-theme-logo";
 
 interface DexLogoProps {

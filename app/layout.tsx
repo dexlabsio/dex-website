@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: "dex",
     images: [
       {
-        url: "/dex-logo-light.png",
+        url: "/og_image.png",
         width: 1200,
         height: 630,
         alt: "dex - Unified Data Platform",
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "dex - Unified Data Platform",
     description: "Build reliable data pipelines, automate workflows, and get insights faster with our unified data platform.",
-    images: ["/dex-logo-light.png"],
+    images: ["/og_image.png"],
     creator: "@dexlabs",
     site: "@dexlabs",
   },
@@ -111,14 +111,14 @@ export default function RootLayout({
         <meta property="og:description" content="Unified data platform for reliable pipelines, workflow automation, and faster insights. Transform data engineering with powerful tools." />
         <meta property="og:url" content="https://www.dexlabs.io" />
         <meta property="og:site_name" content="dex" />
-        <meta property="og:image" content="https://www.dexlabs.io/dex-logo-light.png" />
+        <meta property="og:image" content="https://www.dexlabs.io/og_image.png" />
         <meta property="og:type" content="website" />
         <meta property="og:locale" content="en_US" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="dex - Unified Data Platform" />
         <meta name="twitter:description" content="Unified data platform for reliable pipelines, workflow automation, and faster insights." />
-        <meta name="twitter:image" content="https://www.dexlabs.io/dex-logo-light.png" />
+        <meta name="twitter:image" content="https://www.dexlabs.io/og_image.png" />
         <meta name="twitter:creator" content="@dexlabs" />
         <meta name="twitter:site" content="@dexlabs" />
         
@@ -169,7 +169,7 @@ export default function RootLayout({
                   "ratingValue": "4.8",
                   "ratingCount": "150"
                 },
-                "screenshot": "https://www.dexlabs.io/dex-logo-light.png",
+                "screenshot": "https://www.dexlabs.io/og_image.png",
                 "featureList": [
                   "Data Pipeline Automation",
                   "Workflow Management", 
