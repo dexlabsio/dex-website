@@ -1,4 +1,5 @@
 import Image from "next/image";
+import * as React from "react";
 
 interface LogoIconProps extends React.HTMLAttributes<HTMLDivElement> {
   src: string;

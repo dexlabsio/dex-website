@@ -56,7 +56,7 @@ export default function DemoPage() {
 
         setTimeout(() => {
           window.open('https://app.reclaim.ai/m/gustavo-beltrami/intro', '_blank', 'noopener,noreferrer');
-        }, 1500);
+        }, 1000);
       } else {
         setSubmitStatus({
           type: 'error',

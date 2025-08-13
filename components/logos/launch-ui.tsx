@@ -1,3 +1,5 @@
+import * as React from "react";
+
 const LaunchUI = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width={24}

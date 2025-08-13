@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -27,13 +26,13 @@ interface MenuItem {
   title: string;
   href?: string;
   isLink?: boolean;
-  content?: ReactNode;
+  content?: React.ReactNode;
 }
 
 interface NavigationProps {
   menuItems?: MenuItem[];
   components?: ComponentItem[];
-  logo?: ReactNode;
+  logo?: React.ReactNode;
   logoTitle?: string;
   logoDescription?: string;
   logoHref?: string;

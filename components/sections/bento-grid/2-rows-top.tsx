@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import { Section } from "../../ui/section";
 
-import GlobeIllustration from "@/public/globe";
+import GlobeIllustration from "../../illustrations/globe";
 import CodeEditorIllustration from "../../illustrations/code-editor";
 import PipelineIllustration from "../../illustrations/pipeline";
 import RippleIllustration from "../../illustrations/ripple";

@@ -12,11 +12,6 @@ export interface ActionButtonProps {
   className?: string;
 }
 
-interface ActionButtonsProps {
-  buttons: ActionButtonProps[];
-  className?: string;
-}
-
 function isExternalLink(href: string): boolean {
   return /^https?:\/\//.test(href);
 }
@@ -64,15 +59,5 @@ export function ActionButton({
       {text}
       {iconRight}
     </a>
-  );
-}
-
-export function ActionButtons({ buttons, className }: ActionButtonsProps) {
-  return (
-    <div className={className}>
-      {buttons.map((button, index) => (
-        <ActionButton key={index} {...button} />
-      ))}
-    </div>
   );
 }
