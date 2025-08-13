@@ -1,6 +1,5 @@
-import Image from "next/image";
 import { ReactNode } from "react";
-
+import IntegrationLogo from "../../ui/integration-logo";
 import { Section } from "../../ui/section";
 
 interface LogosProps {
@@ -14,45 +13,14 @@ export default function Logos({
   title = "Seamless integrations with your favorite data science and analytics tools",
   badge = false,
   logos = [
-    <div key="aws" className="flex items-center gap-2 text-sm font-medium">
-      <Image src="/Integration_Logos_light/aws_light.png" alt="AWS" width={720} height={180} className="h-6 w-auto opacity-70 dark:hidden" />
-      <Image src="/Integration_Logos_dark/aws_dark.svg" alt="AWS" width={720} height={180} className="h-6 w-auto opacity-70 hidden dark:block" />
-    </div>,
-    <div key="gcp" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Integration_Logos_light/gcp_light.svg" alt="Google Cloud" className="h-6 w-auto opacity-70 dark:hidden" />
-      <img src="/Integration_Logos_dark/gcp_dark.svg" alt="Google Cloud" className="h-6 w-auto opacity-70 hidden dark:block" />
-      <span>Google Cloud</span>
-    </div>,
-    <div key="bigquery" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Integration_Logos_light/bigquery_light.svg" alt="BigQuery" className="h-6 w-auto opacity-70 dark:hidden" />
-      <img src="/Integration_Logos_dark/bigquery_dark.svg" alt="BigQuery" className="h-6 w-auto opacity-70 hidden dark:block" />
-      <span>BigQuery</span>
-    </div>,
-    <div key="powerbi" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Integration_Logos_light/power_bi_light.png" alt="Power BI" className="h-6 w-auto opacity-70 dark:hidden" />
-      <img src="/Integration_Logos_dark/power_bi_dark.svg" alt="Power BI" className="h-6 w-auto opacity-70 hidden dark:block" />
-      <span>Power BI</span>
-    </div>,
-    <div key="tableau" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Integration_Logos_light/tableau_light.svg" alt="Tableau" className="h-6 w-auto opacity-70 dark:hidden" />
-      <img src="/Integration_Logos_dark/tableau_dark.svg" alt="Tableau" className="h-6 w-auto opacity-70 hidden dark:block" />
-      <span>Tableau</span>
-    </div>,
-    <div key="looker" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Integration_Logos_light/looker_light.svg" alt="Looker" className="h-6 w-auto opacity-70 dark:hidden" />
-      <img src="/Integration_Logos_dark/looker_dark.svg" alt="Looker" className="h-6 w-auto opacity-70 hidden dark:block" />
-      <span>Looker</span>
-    </div>,
-    <div key="metabase" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Integration_Logos_light/metabase_light.svg" alt="Metabase" className="h-6 w-auto opacity-70 dark:hidden" />
-      <img src="/Integration_Logos_dark/metabase_dark.svg" alt="Metabase" className="h-6 w-auto opacity-70 hidden dark:block" />
-      <span>Metabase</span>
-    </div>,
-    <div key="jupyter" className="flex items-center gap-2 text-sm font-medium">
-      <img src="/Integration_Logos_light/jupyter_light.png" alt="Jupyter" className="h-6 w-auto opacity-70 dark:hidden" />
-      <img src="/Integration_Logos_dark/jupyter_dark.svg" alt="Jupyter" className="h-6 w-auto opacity-70 hidden dark:block" />
-      <span>Jupyter</span>
-    </div>,
+    <IntegrationLogo key="aws" name="aws" alt="AWS" lightExt="png" />,
+    <IntegrationLogo key="gcp" name="gcp" alt="Google Cloud" showLabel />,
+    <IntegrationLogo key="bigquery" name="bigquery" alt="BigQuery" showLabel />,
+    <IntegrationLogo key="powerbi" name="power_bi" alt="Power BI" lightExt="png" showLabel />,
+    <IntegrationLogo key="tableau" name="tableau" alt="Tableau" showLabel />,
+    <IntegrationLogo key="looker" name="looker" alt="Looker" showLabel />,
+    <IntegrationLogo key="metabase" name="metabase" alt="Metabase" showLabel />,
+    <IntegrationLogo key="jupyter" name="jupyter" alt="Jupyter" lightExt="png" showLabel />,
   ],
   className,
 }: LogosProps) {

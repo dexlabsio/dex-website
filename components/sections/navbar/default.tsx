@@ -12,20 +12,12 @@ import Navigation from "@/components/ui/navigation";
 import { NAV_LINKS } from "@/components/ui/navigation-links";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import DexLogo from "../../logos/dex";
-import { Button, type ButtonProps } from "../../ui/button";
+import { ActionButton, type ActionButtonProps } from "../../ui/action-button";
+import { Button } from "../../ui/button";
 
 interface NavbarLink {  
   text: string;
   href: string;
-}
-
-interface NavbarActionProps {
-  text: string;
-  href: string;
-  variant?: ButtonProps["variant"];
-  icon?: ReactNode;
-  iconRight?: ReactNode;
-  isButton?: boolean;
 }
 
 interface NavbarProps {
@@ -33,14 +25,14 @@ interface NavbarProps {
   name?: string;
   homeUrl?: string;
   mobileLinks?: NavbarLink[];
-  actions?: NavbarActionProps[];
+  actions?: ActionButtonProps[];
   showNavigation?: boolean;
   customNavigation?: ReactNode;
   className?: string;
 }
 
 export default function Navbar({
-  logo = <DexLogo src="/logo.png" alt="DexLabs" />,
+  logo = <DexLogo />,
   name = "",
   homeUrl = "/",
   mobileLinks = NAV_LINKS.map((link) => ({ text: link.title, href: link.href })),
@@ -73,30 +65,13 @@ export default function Navbar({
             {showNavigation && (customNavigation || <Navigation />)}
           </NavbarLeft>
           <NavbarRight>
-            {actions.map((action, index) =>
-              action.isButton ? (
-                <Button
-                  key={index}
-                  variant={action.variant || "default"}
-                  asChild
-                >
-                  <a href={action.href} {...(/^https?:\/\//.test(action.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
-                    {action.icon}
-                    {action.text}
-                    {action.iconRight}
-                  </a>
-                </Button>
-              ) : (
-                <a
-                  key={index}
-                  href={action.href}
-                  {...(/^https?:\/\//.test(action.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="hidden text-sm md:block"
-                >
-                  {action.text}
-                </a>
-              ),
-            )}
+            {actions.map((action, index) => (
+              <ActionButton
+                key={index}
+                {...action}
+                className={action.isButton ? undefined : "hidden text-sm md:block"}
+              />
+            ))}
             <Sheet>
               <SheetTrigger asChild>
                 <Button
@@ -117,14 +92,13 @@ export default function Navbar({
                     <span>{name}</span>
                   </a>
                   {mobileLinks.map((link, index) => (
-                    <a
+                    <ActionButton
                       key={index}
                       href={link.href}
-                      {...(/^https?:\/\//.test(link.href) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                      text={link.text}
+                      isButton={false}
                       className="text-muted-foreground hover:text-foreground"
-                    >
-                      {link.text}
-                    </a>
+                    />
                   ))}
                 </nav>
               </SheetContent>

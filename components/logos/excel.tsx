@@ -1,14 +1,11 @@
-import Image from "next/image";
+import LogoIcon from "../ui/logo-icon";
 
 const Excel = (props: React.HTMLAttributes<HTMLDivElement>) => (
-  <div {...props}>
-    <Image
-      src="/excel-svgrepo-com.svg"
-      alt="Excel"
-      width={24}
-      height={24}
-    />
-  </div>
+  <LogoIcon
+    src="/excel-svgrepo-com.svg"
+    alt="Excel"
+    {...props}
+  />
 );
 
 export default Excel;

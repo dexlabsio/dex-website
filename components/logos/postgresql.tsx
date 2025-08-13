@@ -1,14 +1,11 @@
-import Image from "next/image";
+import LogoIcon from "../ui/logo-icon";
 
 const PostgreSQL = (props: React.HTMLAttributes<HTMLDivElement>) => (
-  <div {...props}>
-    <Image
-      src="/postgresql-logo-svgrepo-com.svg"
-      alt="PostgreSQL"
-      width={24}
-      height={24}
-    />
-  </div>
+  <LogoIcon
+    src="/postgresql-logo-svgrepo-com.svg"
+    alt="PostgreSQL"
+    {...props}
+  />
 );
 
 export default PostgreSQL;

@@ -3,25 +3,17 @@ import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 import FlowScreenshotIllustration from "@/components/illustrations/flow-screenshot";
-import { Button, ButtonProps } from "@/components/ui/button";
+import { ActionButton, type ActionButtonProps } from "@/components/ui/action-button";
 import Glow from "@/components/ui/glow";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
 import { Section } from "@/components/ui/section";
   
 
-interface HeroButtonProps {
-  href: string;
-  text: string;
-  variant?: ButtonProps["variant"];
-  icon?: ReactNode;
-  iconRight?: ReactNode;
-}
-
 interface HeroProps {
   title?: string;
   description?: string;
   mockup?: ReactNode | false;
-  buttons?: HeroButtonProps[] | false;
+  buttons?: ActionButtonProps[] | false;
   className?: string;
 }
 
@@ -58,18 +50,11 @@ export default function Hero({
           {buttons !== false && buttons.length > 0 && (
             <div className="animate-appear relative z-10 flex justify-center gap-4 opacity-0 delay-300">
               {buttons.map((button, index) => (
-                <Button
+                <ActionButton
                   key={index}
-                  variant={button.variant || "default"}
+                  {...button}
                   size="lg"
-                  asChild
-                >
-                  <a href={button.href}>
-                    {button.icon}
-                    {button.text}
-                    {button.iconRight}
-                  </a>
-                </Button>
+                />
               ))}
             </div>
           )}

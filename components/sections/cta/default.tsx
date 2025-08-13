@@ -1,22 +1,13 @@
 import { cn } from "@/lib/utils";
-import { ReactNode } from "react";
 
 import Glow from "@/components/ui/glow";
-import { Button, type ButtonProps } from "../../ui/button";
+import { ActionButton, type ActionButtonProps } from "../../ui/action-button";
 import { Section } from "../../ui/section";
-
-interface CTAButtonProps {
-  href: string;
-  text: string;
-  variant?: ButtonProps["variant"];
-  icon?: ReactNode;
-  iconRight?: ReactNode;
-}
 
 interface CTAProps {
   title?: string;
   description?: string;
-  buttons?: CTAButtonProps[] | false;
+  buttons?: ActionButtonProps[] | false;
   className?: string;
 }
 
@@ -44,18 +35,11 @@ export default function CTA({
         {buttons !== false && buttons.length > 0 && (
           <div className="flex justify-center gap-4">
             {buttons.map((button, index) => (
-              <Button
+              <ActionButton
                 key={index}
-                variant={button.variant || "default"}
+                {...button}
                 size="lg"
-                asChild
-              >
-                <a href={button.href}>
-                  {button.icon}
-                  {button.text}
-                  {button.iconRight}
-                </a>
-              </Button>
+              />
             ))}
           </div>
         )}

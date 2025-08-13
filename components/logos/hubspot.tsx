@@ -1,14 +1,11 @@
-import Image from "next/image";
+import LogoIcon from "../ui/logo-icon";
 
 const HubSpot = (props: React.HTMLAttributes<HTMLDivElement>) => (
-  <div {...props}>
-    <Image
-      src="/hubspot-svgrepo-com.svg"
-      alt="HubSpot"
-      width={24}
-      height={24}
-    />
-  </div>
+  <LogoIcon
+    src="/hubspot-svgrepo-com.svg"
+    alt="HubSpot"
+    {...props}
+  />
 );
 
 export default HubSpot;

@@ -62,7 +62,7 @@ export default function Logos({
           {logoItems.map((item, index) => (
             <div
               key={index}
-              className="bg-background flex aspect-2/1 items-center justify-center "
+              className="bg-background flex aspect-2/1 items-center justify-center p-6 md:p-8 lg:p-10"
             >
               {item.logo}
             </div>

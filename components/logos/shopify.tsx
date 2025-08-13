@@ -1,14 +1,11 @@
-import Image from "next/image";
+import LogoIcon from "../ui/logo-icon";
 
 const Shopify = (props: React.HTMLAttributes<HTMLDivElement>) => (
-  <div {...props}>
-    <Image
-      src="/shopify-color-svgrepo-com.svg"
-      alt="Shopify"
-      width={24}
-      height={24}
-    />
-  </div>
+  <LogoIcon
+    src="/shopify-color-svgrepo-com.svg"
+    alt="Shopify"
+    {...props}
+  />
 );
 
 export default Shopify;
