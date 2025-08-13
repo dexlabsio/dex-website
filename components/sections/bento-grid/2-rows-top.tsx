@@ -1,21 +1,13 @@
-import { ReactNode } from "react";
-import Image from "next/image";
-
 import { cn } from "@/lib/utils";
+import { ReactNode } from "react";
 import { Section } from "../../ui/section";
-import {
-  Tile,
-  TileContent,
-  TileDescription,
-  TileLink,
-  TileTitle,
-  TileVisual,
-} from "../../ui/tile";
+
+import GlobeIllustration from "@/public/globe";
 import CodeEditorIllustration from "../../illustrations/code-editor";
 import PipelineIllustration from "../../illustrations/pipeline";
 import RippleIllustration from "../../illustrations/ripple";
 import TilesIllustration from "../../illustrations/tiles";
-import GlobeIllustration from "@/public/globe";
+import { Tile, TileLink, TileContent, TileTitle, TileDescription, TileVisual } from "@/components/ui/tile";
 
 interface TileProps {
   title: string;
