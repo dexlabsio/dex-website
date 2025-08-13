@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Block access to internal API routes
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Allow access to static assets
+Allow: /images/
+Allow: /icons/
+Allow: /*.css
+Allow: /*.js
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://www.dexlabs.io/sitemap.xml
