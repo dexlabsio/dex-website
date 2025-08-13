@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: "dex - Unified Data Platform | Build Reliable Data Pipelines",
     template: "%s | dex"
   },
-  description: "A unified data platform that helps teams build reliable data pipelines, automate workflows, and get insights faster. Transform your data engineering with powerful automation and collaboration tools.",
+  description: "Unified data platform for reliable pipelines, workflow automation, and faster insights. Transform data engineering with powerful tools.",
   keywords: [
     "data platform",
     "data pipelines",
@@ -71,15 +71,6 @@ export const metadata: Metadata = {
     creator: "@dexlabs",
     site: "@dexlabs",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-  },
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
-    { media: "(prefers-color-scheme: dark)", color: "#000000" },
-  ],
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -92,6 +83,16 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#000000" },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -100,16 +101,23 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <meta name="geo.region" content="US" />
+        <meta name="geo.placename" content="United States" />
+        <meta name="language" content="en" />
+        <meta name="distribution" content="global" />
+        <meta name="rating" content="general" />
+        
         <meta property="og:title" content="dex - Unified Data Platform" />
-        <meta property="og:description" content="A unified data platform that helps teams build reliable data pipelines, automate workflows, and get insights faster." />
+        <meta property="og:description" content="Unified data platform for reliable pipelines, workflow automation, and faster insights. Transform data engineering with powerful tools." />
         <meta property="og:url" content="https://www.dexlabs.io" />
         <meta property="og:site_name" content="dex" />
         <meta property="og:image" content="https://www.dexlabs.io/dex-logo-light.png" />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_US" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="dex - Unified Data Platform" />
-        <meta name="twitter:description" content="Build reliable data pipelines, automate workflows, and get insights faster with our unified data platform." />
+        <meta name="twitter:description" content="Unified data platform for reliable pipelines, workflow automation, and faster insights." />
         <meta name="twitter:image" content="https://www.dexlabs.io/dex-logo-light.png" />
         <meta name="twitter:creator" content="@dexlabs" />
         <meta name="twitter:site" content="@dexlabs" />
@@ -117,31 +125,59 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "dex",
-              "description": "A unified data platform that helps teams build reliable data pipelines, automate workflows, and get insights faster.",
-              "url": "https://www.dexlabs.io",
-              "applicationCategory": "BusinessApplication",
-              "operatingSystem": "Web Browser",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              },
-              "publisher": {
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
                 "@type": "Organization",
                 "name": "dex Labs",
-                "url": "https://www.dexlabs.io"
+                "url": "https://www.dexlabs.io",
+                "logo": "https://www.dexlabs.io/dex-logo-light.png",
+                "foundingDate": "2024",
+                "founders": [{
+                  "@type": "Person",
+                  "name": "dex Labs Team"
+                }],
+                "address": {
+                  "@type": "PostalAddress",
+                  "addressCountry": "US"
+                },
+                "sameAs": [
+                  "https://twitter.com/dexlabs"
+                ]
               },
-              "softwareVersion": "1.0",
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "150"
+              {
+                "@context": "https://schema.org",
+                "@type": "SoftwareApplication",
+                "name": "dex",
+                "description": "Unified data platform for reliable pipelines, workflow automation, and faster insights. Transform data engineering with powerful tools.",
+                "url": "https://www.dexlabs.io",
+                "applicationCategory": "BusinessApplication",
+                "operatingSystem": "Web Browser",
+                "offers": {
+                  "@type": "Offer",
+                  "price": "0",
+                  "priceCurrency": "USD"
+                },
+                "publisher": {
+                  "@type": "Organization",
+                  "name": "dex Labs",
+                  "url": "https://www.dexlabs.io"
+                },
+                "softwareVersion": "1.0",
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.8",
+                  "ratingCount": "150"
+                },
+                "screenshot": "https://www.dexlabs.io/dex-logo-light.png",
+                "featureList": [
+                  "Data Pipeline Automation",
+                  "Workflow Management", 
+                  "Real-time Analytics",
+                  "Data Integration"
+                ]
               }
-            })
+            ])
           }}
         />
       </head>
