@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -44,22 +44,14 @@ export default function Screenshot({
     );
   }
 
-  // Check if this is a WebP source and create PNG fallback
-  const isWebP = src.endsWith('.webp');
-  const webpSrc = isWebP ? src : src.replace(/\.(png|jpg|jpeg)$/i, '.webp');
-  const pngSrc = isWebP ? src.replace(/\.webp$/i, '.png') : src;
-  
   return (
-    <picture>
-      <source srcSet={webpSrc} type="image/webp" />
-      <Image
-        src={pngSrc}
-        alt={alt}
-        width={width}
-        height={height}
-        className={className}
-        priority={priority}
-      />
-    </picture>
+    <Image
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      className={className}
+      priority={priority}
+    />
   );
 }
