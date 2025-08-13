@@ -1,6 +1,4 @@
-import { Boxes, Globe } from "lucide-react";
-import * as React from "react";
-import LaunchUI from "../logos/launch-ui";
+import { Boxes } from "lucide-react";
 import { Beam } from "../ui/beam";
 import Glow from "../ui/glow";
 
