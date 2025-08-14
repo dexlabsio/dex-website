@@ -28,6 +28,7 @@ export default function DualThemeLogo({
         width={width}
         height={height}
         className={`dark:hidden ${className || ""}`}
+        style={{ width: 'auto', height: 'auto' }}
       />
       <Image
         {...props}
@@ -36,6 +37,7 @@ export default function DualThemeLogo({
         width={width}
         height={height}
         className={`hidden dark:block ${className || ""}`}
+        style={{ width: 'auto', height: 'auto' }}
       />
     </>
   );

@@ -15,7 +15,9 @@
       "Bash(npm i:*)",
       "Bash(imagemin:*)",
       "Bash(svgo:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npx:*)"
     ],
     "deny": [],
     "ask": []
