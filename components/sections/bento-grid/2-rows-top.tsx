@@ -49,7 +49,7 @@ export default function BentoGrid({
         </p>
       ),
       visual: (
-        <div className="min-h-[240px] w-full grow items-center self-center p-4 lg:px-12">
+        <div className="min-h-[200px] w-full grow items-center self-center p-4 lg:px-12">
           <CodeEditorIllustration />
         </div>
       ),
@@ -63,7 +63,7 @@ export default function BentoGrid({
         </p>
       ),
       visual: (
-        <div className="min-h-[300px] w-full py-12 flex items-center justify-center relative">
+        <div className="w-full flex items-center justify-center relative">
           <img 
             src="/bento_icons/orchestrate_light.svg" 
             alt="Dex orchestration platform" 
@@ -84,7 +84,7 @@ export default function BentoGrid({
       description:
         "Generate SQL from everyday language — with full awareness of your models, metadata, and lineage. Not just AI, but AI that knows your data.",
       visual: (
-        <div className="min-h-[160px] grow items-center self-center scale-[0.85]">
+        <div className="flex items-center justify-center scale-[0.85] mt-4">
           <PipelineIllustration />
         </div>
       ),
@@ -98,7 +98,7 @@ export default function BentoGrid({
         </p>
       ),
       visual: (
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center mt-4">
           <div className="scale-50">
             <RippleIllustration />
           </div>
@@ -125,14 +125,12 @@ export default function BentoGrid({
                 key={index} 
                 className={cn(tile.size)}
               >
-                
                 <TileContent>
                   <TileTitle>{tile.title}</TileTitle>
                   <TileDescription>{tile.description}</TileDescription>
                 </TileContent>
                 <TileVisual className={cn(
-                  index >= 2 ? "mt-[-4rem] mb-[-4rem]" : "",
-                  index === 3 || index === 4 ? "flex items-center justify-center" : ""
+                  index >= 2 ? "items-center" : ""
                 )}>
                   {tile.visual}
                 </TileVisual>
