@@ -1,7 +1,7 @@
 "use client";
 
 import { BlocksIcon, PaletteIcon, SquarePenIcon } from "lucide-react";
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 
 import Glow from "@/components/ui/glow";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
@@ -116,6 +116,7 @@ export default function TabsLeft({
   ],
   className,
 }: TabsLeftProps) {
+  const tabsRootRef = useRef<HTMLDivElement | null>(null);
   return (
     <Section id="solution" className={className}>
       <div className="max-w-container mx-auto flex flex-col gap-8 sm:gap-16">
@@ -131,6 +132,35 @@ export default function TabsLeft({
           {tabs !== false && tabs.length > 0 && (
             <Tabs
               defaultValue={defaultTab}
+              ref={tabsRootRef }
+              onValueChange={() => {
+                if (typeof window === "undefined") return;
+                // Only auto-scroll on mobile/tablet where content stacks below triggers
+                if (window.innerWidth >= 1024) return; // lg breakpoint
+                requestAnimationFrame(() => {
+                  const container = tabsRootRef.current;
+                  if (!container) return;
+                  const activeTrigger = container.querySelector(
+                    '[data-slot="tabs-trigger"][data-state="active"]',
+                  ) as HTMLElement | null;
+                  const activeContent = container.querySelector(
+                    '[data-slot="tabs-content"][data-state="active"]',
+                  ) as HTMLElement | null;
+
+                  const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+                  const triggerRect = activeTrigger?.getBoundingClientRect();
+                  const contentRect = activeContent?.getBoundingClientRect();
+
+                  // Prefer keeping the clicked trigger in view; otherwise ensure content is visible
+                  if (triggerRect && triggerRect.top < 0) {
+                    activeTrigger?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+                    return;
+                  }
+                  if (contentRect && contentRect.bottom > viewportHeight) {
+                    activeContent?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+                  }
+                });
+              }}
               className="flex flex-col items-start gap-4 lg:grid lg:grid-cols-3"
             >
               <TabsList className="grid grid-cols-1 items-stretch gap-2 sm:grid-cols-3 md:gap-4 lg:grid-cols-1">

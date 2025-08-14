@@ -1,7 +1,7 @@
 "use client";
 
-import * as React from "react";
 import * as TabsPrimitive from "@radix-ui/react-tabs";
+import * as React from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -26,6 +26,7 @@ function TabsTrigger({
 }: React.ComponentProps<typeof TabsPrimitive.Trigger>) {
   return (
     <TabsPrimitive.Trigger
+      type="button"
       data-slot="tabs-trigger"
       className={cn(
         "data-[state=active]:glass-4 ring-offset-background hover:bg-accent/50 hover:text-accent-foreground focus-visible:ring-ring data-[state=active]:text-foreground flex flex-col gap-3 rounded-md border border-transparent px-5 pt-4 pb-6 text-left text-sm font-medium transition-all focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-xl dark:border-b-0 cursor-pointer",
@@ -52,4 +53,5 @@ function TabsContent({
   );
 }
 
-export { Tabs, TabsList, TabsTrigger, TabsContent };
+export { Tabs, TabsContent, TabsList, TabsTrigger };
+
