@@ -334,3 +334,11 @@ dex-website-2025/                    # DEFAULT WORKING DIRECTORY
   - **Navigation Improvements**: Updated Hero section "What's new" link to GitBook release notes, "Unified data platform" now scrolls to BentoGrid section, CTA "Learn more" redirects to demo page
   - **Footer Optimization**: Removed Company column, rearranged layout to 5-column grid, confirmed Product links pointing to correct sections
   - **Terms of Service**: Created comprehensive professional Terms of Service page at `/terms` with company-specific content, Brazilian jurisdiction, and all essential legal sections
+  - **Major Code Cleanup (September 9, 2025)**:
+    - **Unused File Removal**: Deleted 8 unused files (components/logos/react.tsx, tailwind.tsx, components/ui/dropdown-menu.tsx, input.tsx, mode-toggle.tsx, footer.tsx, social-proof-item.tsx, components/sections/logos/default.tsx)
+    - **Dependency Cleanup**: Removed 4 unused dependencies (@radix-ui/react-dropdown-menu, eslint, eslint-config-next, tw-animate-css) reducing bundle size
+    - **TypeScript Improvements**: Fixed all 'any' types with proper type annotations (React.SVGProps<SVGSVGElement>, React.HTMLAttributes<HTMLDivElement>)
+    - **Code Quality Fixes**: Fixed React unescaped entities, removed unused imports and variables, standardized component patterns
+    - **Directory Structure**: Confirmed original subdirectory structure was correct (hero/default.tsx, cta/default.tsx, etc.), only reverted marquee-2-rows.tsx to flat naming
+    - **Asset Organization**: Maintained public directory structure with spaces in "Customers Logos" folder
+    - **Build Optimization**: All TypeScript compilation errors resolved, build process streamlined, maintained full functionality
