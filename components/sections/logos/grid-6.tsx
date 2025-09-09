@@ -32,42 +32,42 @@ export default function Logos({ className }: LogosProps) {
           <div className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-xl lg:pl-8">
             <Image
               alt="Caffeine Army"
-              src="/customers_logos/Caffeine Army.svg"
+              src="/Customers Logos/Caffeine Army.svg"
               width={105}
               height={48}
               className="max-h-20 w-full object-contain object-center"
             />
             <Image
               alt="Insider"
-              src="/customers_logos/Insider.svg"
+              src="/Customers Logos/Insider.svg"
               width={104}
               height={48}
               className="max-h-20 w-full object-contain object-center"
             />
             <Image
               alt="Linus"
-              src="/customers_logos/Linus.svg"
+              src="/Customers Logos/Linus.svg"
               width={140}
               height={48}
               className="max-h-20 w-full object-contain object-center"
             />
             <Image
               alt="Moon Ventures"
-              src="/customers_logos/Moon Ventures (3).svg"
+              src="/Customers Logos/Moon Ventures (3).svg"
               width={136}
               height={48}
               className="max-h-20 w-full object-contain object-center"
             />
             <Image
               alt="Robbin"
-              src="/customers_logos/Robbin.svg"
+              src="/Customers Logos/Robbin.svg"
               width={158}
               height={48}
               className="max-h-20 w-full object-contain object-center"
             />
             <Image
               alt="Hubii"
-              src="/customers_logos/hubii.svg"
+              src="/Customers Logos/hubii.svg"
               width={147}
               height={48}
               className="max-h-20 w-full object-contain object-center"
