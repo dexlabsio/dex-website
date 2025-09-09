@@ -7,7 +7,7 @@
 **Purpose**: Modern, unified data platform marketing website  
 **Framework**: Next.js 15.4.5 with TypeScript and Tailwind CSS  
 **UI Components**: shadcn/ui with custom dex theming  
-**Working Directory**: `dex-website-2025/` (localhost:3000 version - DEFAULT)  
+**Working Directory**: Root directory (simplified structure)  
 
 ## What is dex?
 
@@ -31,14 +31,16 @@ dex is a unified data platform that makes it easy to get answers, make decisions
 
 ### Project Structure
 ```
-dex-website-2025/
+/Users/G.Beltrami/Documents/Projects/3.dex-website/ (Root Directory)
 ├── app/                    # Next.js App Router
 │   ├── page.tsx           # Homepage
 │   ├── demo/page.tsx      # Demo request form
-│   ├── privacy/page.tsx   # Privacy Policy (exists)
-│   ├── security/page.tsx  # Information Security Policy (exists)
+│   ├── privacy/page.tsx   # Privacy Policy
+│   ├── security/page.tsx  # Information Security Policy
+│   ├── terms/page.tsx     # Terms of Service
 │   ├── layout.tsx         # Root layout
-│   └── globals.css        # Global styles
+│   ├── globals.css        # Global styles
+│   └── api/               # API routes
 ├── components/
 │   ├── sections/          # Page sections
 │   │   ├── hero/default.tsx
@@ -53,7 +55,10 @@ dex-website-2025/
 │   ├── ui/               # Reusable UI components
 │   ├── logos/            # Logo components
 │   └── illustrations/    # Custom illustrations
-└── public/               # Static assets
+├── public/               # Static assets
+├── lib/                  # Utility functions
+├── styles/               # Global styles
+└── PROJECT_DIARY.md      # This documentation file
 ```
 
 ## Brand Identity
@@ -239,24 +244,26 @@ When working on this project:
 6. **Preserve existing functionality** - especially forms and navigation
 7. **Update this diary** when making significant changes
 
-## Working Directory & File Organization (Updated January 2025)
+## Working Directory & File Organization (Updated September 2025)
 
-### Default Working Directory
-- **IMPORTANT**: Always work in the `dex-website-2025/` directory
-- This is the localhost:3000 version and the most up-to-date version of the website
-- All future development should happen in this directory
-- The root directory `/Users/G.Beltrami/Documents/Projects/3.dex-website/` contains legacy files
+### Simplified Directory Structure
+- **IMPORTANT**: Project has been simplified - all files are now in the root directory
+- **Working Directory**: `/Users/G.Beltrami/Documents/Projects/3.dex-website/`
+- **Previous**: Files were in a `dex-website-2025/` subdirectory (now removed for simplification)
+- **Current**: Direct development in root directory - cleaner and more straightforward
 
-### Current File Structure (January 2025)
+### Current File Structure (September 2025)
 ```
-dex-website-2025/                    # DEFAULT WORKING DIRECTORY
+/Users/G.Beltrami/Documents/Projects/3.dex-website/  # ROOT DIRECTORY
 ├── app/                             # Next.js App Router
 │   ├── page.tsx                     # Homepage composition
 │   ├── demo/page.tsx                # Demo request form
 │   ├── privacy/page.tsx             # Privacy Policy
 │   ├── security/page.tsx            # Information Security Policy
+│   ├── terms/page.tsx               # Terms of Service
 │   ├── layout.tsx                   # Root layout
-│   └── globals.css                  # Global styles and theme
+│   ├── globals.css                  # Global styles and theme
+│   └── api/                         # API routes
 ├── components/
 │   ├── sections/                    # Page sections (organized)
 │   │   ├── hero/default.tsx
@@ -266,31 +273,28 @@ dex-website-2025/                    # DEFAULT WORKING DIRECTORY
 │   │   ├── navbar/default.tsx
 │   │   ├── footer/minimal.tsx
 │   │   ├── cta/default.tsx
-│   │   ├── marquee/default.tsx      # MOVED & RENAMED
+│   │   ├── marquee/default.tsx
 │   │   └── tabs/left.tsx
 │   ├── ui/                          # Reusable UI components
 │   ├── logos/                       # Logo components
-│   ├── illustrations/               # Custom illustrations
-│   ├── mockups/                     # Mockup components
-│   ├── styles/                      # Component-specific styles
-│   └── templates/                   # Template components
+│   └── illustrations/               # Custom illustrations
 ├── public/                          # Static assets (organized)
-│   ├── customers_logos/             # RENAMED from "Customers Logos"
-│   ├── Integration_Logos_dark/
-│   ├── Integration_Logos_light/
-│   ├── platform_screenshots/
-│   ├── bento_icons/
-│   └── clients_logo_dark/
+│   ├── customers_logos/             # Customer logo assets
+│   ├── Integration_Logos_dark/      # Dark integration logos
+│   ├── Integration_Logos_light/     # Light integration logos
+│   ├── platform_screenshots/        # Platform screenshots
+│   ├── bento_icons/                 # Bento grid icons
+│   └── clients_logo_dark/          # Dark client logos
 ├── lib/                             # Utility functions
 ├── styles/                          # Global styles
-└── PROJECT_DIARY.md                 # This file
+└── PROJECT_DIARY.md                 # This documentation file
 ```
 
-### Recent File Organization Changes (January 2025)
-1. **Moved**: `components/sections/marquee-2-rows.tsx` → `components/sections/marquee/default.tsx`
-2. **Updated**: Import path in `app/page.tsx` from `@/components/sections/marquee-2-rows` to `@/components/sections/marquee/default`
-3. **Renamed**: `public/Customers Logos/` → `public/customers_logos/` (removed spaces)
-4. **Updated**: All image paths in `components/sections/logos/grid-6.tsx` to use new directory name
+### Recent File Organization Changes (September 2025)
+1. **Directory Simplification**: Moved all files from `dex-website-2025/` subdirectory to root directory
+2. **Removed**: Empty `dex-website-2025/` subdirectory 
+3. **Simplified**: Development workflow - no more nested directory confusion
+4. **Previous Changes**: Marquee component organized, customer logos renamed, import paths updated
 
 ### File Organization Rules
 - All sections must be in their own directories under `components/sections/`
@@ -328,7 +332,7 @@ dex-website-2025/                    # DEFAULT WORKING DIRECTORY
 
 ### Recent Updates
 - **September 2025**: 
-  - Established `dex-website-2025/` as default working directory, reorganized file structure, updated PROJECT_DIARY with new organization rules
+  - **Directory Simplification**: Moved all project files from `dex-website-2025/` subdirectory to root directory for cleaner development workflow
   - **Color Scheme Update**: Changed primary colors from dex blue to indigo (indigo-600/indigo-500) with solid button styles
   - **Marquee Component Enhancement**: Added third row with 6 new integration logos (Amazon S3, DynamoDB, GitHub, MongoDB, Excel, Slack, Google Sheets), reduced transparency effects for better visibility
   - **Navigation Improvements**: Updated Hero section "What's new" link to GitBook release notes, "Unified data platform" now scrolls to BentoGrid section, CTA "Learn more" redirects to demo page
