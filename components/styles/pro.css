@@ -2,6 +2,7 @@
 
 @theme inline {
   --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
   --animate-appear-zoom-fast: appear-zoom 0.3s forwards ease-out;
   --animate-hover: hover 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-hover-reverse: hover-reverse 6s cubic-bezier(0.4, 0, 0.6, 1)
@@ -30,6 +31,14 @@
     }
     to {
       transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
   @keyframes pulse-hover {

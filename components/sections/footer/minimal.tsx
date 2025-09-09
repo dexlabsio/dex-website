@@ -1,55 +1,128 @@
-import { Footer, FooterBottom } from "@/components/ui/footer";
-import { ModeToggle } from "@/components/ui/mode-toggle";
 import { cn } from "@/lib/utils";
+import DexLogo from "@/components/logos/dex";
 
-
-
-interface FooterLink {
-  text: string;
-  href: string;
-}
+const navigation = {
+  product: [
+    { name: 'Extract & Load', href: '#product' },
+    { name: 'Transform', href: '#product' },
+    { name: 'Orchestrate', href: '#product' },
+    { name: 'AI Copilot', href: '#product' },
+    { name: 'Analytics', href: '#solution' },
+  ],
+  support: [
+    { name: 'Documentation', href: 'https://docs.dexlabs.io' },
+    { name: 'Support', href: 'mailto:support@dexlabs.io' },
+    { name: 'Book a Demo', href: '/demo' },
+  ],
+  legal: [
+    { name: 'Terms of Service', href: '/terms' },
+    { name: 'Privacy Policy', href: '/privacy' },
+    { name: 'Information Security Policy', href: '/security' },
+  ],
+  social: [
+    {
+      name: 'X',
+      href: 'https://x.com/dexlabs',
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path d="M13.6823 10.6218L20.2391 3H18.6854L12.9921 9.61788L8.44486 3H3.2002L10.0765 13.0074L3.2002 21H4.75404L10.7663 14.0113L15.5685 21H20.8131L13.6819 10.6218H13.6823ZM11.5541 13.0956L10.8574 12.0991L5.31391 4.16971H7.70053L12.1742 10.5689L12.8709 11.5655L18.6861 19.8835H16.2995L11.5541 13.096V13.0956Z" />
+        </svg>
+      ),
+    },
+    {
+      name: 'GitHub',
+      href: 'https://github.com/dexlabs',
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
+    {
+      name: 'LinkedIn',
+      href: 'https://linkedin.com/company/dexlabs',
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M19 0H5a5 5 0 0 0-5 5v14a5 5 0 0 0 5 5h14a5 5 0 0 0 5-5V5a5 5 0 0 0-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
+  ],
+};
 
 interface FooterProps {
-  copyright?: string;
-  links?: FooterLink[];
-  showModeToggle?: boolean;
   className?: string;
 }
 
 export default function FooterSection({
-  copyright = "© 2025 dex Tecnologia LTDA. CNPJ: 48.412.896/0001-42. All rights reserved",
-  links = [
-    { text: "Sign in", href: "https://app.dexlabs.io" },
-    { text: "Privacy Policy", href: "/privacy" },
-    { text: "support@dexlabs.io", href: "mailto:support@dexlabs.io" },
-  ],
-  showModeToggle = true,
   className,
 }: FooterProps) {
   return (
-    <footer className={cn("bg-background w-full px-4", className)}>
-      <div className="max-w-container mx-auto">
-        <Footer className="pt-0">
-          <FooterBottom className="mt-0 flex flex-col items-center gap-4 sm:flex-col md:flex-row">
-            <div>{copyright}</div>
-            <div className="flex items-center gap-4">
-              {links.map((link, index) => {
-                const isExternal = /^https?:\/\//.test(link.href) || link.href.startsWith('mailto:');
-                return (
-                  <a
-                    key={index}
-                    href={link.href}
-                    {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                    className="hover:text-primary transition-colors"
-                  >
-                    {link.text}
-                  </a>
-                );
-              })}
-              {showModeToggle && <ModeToggle />}
+    <footer className={cn("bg-white", className)}>
+      <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
+        <div className="grid grid-cols-2 gap-8 xl:grid-cols-5">
+          <div className="col-span-2">
+            <DexLogo src="/logo.png" alt="dex" className="h-9 w-auto" />
+            <p className="mt-4 text-sm/6 text-balance text-gray-600">
+              The unified data platform that makes it easy to get answers, make decisions and automate processes.
+            </p>
+            <div className="mt-6 flex gap-x-6">
+              {navigation.social.map((item) => (
+                <a key={item.name} href={item.href} className="text-gray-600 hover:text-gray-800">
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon aria-hidden="true" className="size-6" />
+                </a>
+              ))}
             </div>
-          </FooterBottom>
-        </Footer>
+          </div>
+          <div>
+            <h3 className="text-sm/6 font-semibold text-gray-900">Product</h3>
+            <ul role="list" className="mt-6 space-y-4">
+              {navigation.product.map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm/6 font-semibold text-gray-900">Support</h3>
+            <ul role="list" className="mt-6 space-y-4">
+              {navigation.support.map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm/6 font-semibold text-gray-900">Legal</h3>
+            <ul role="list" className="mt-6 space-y-4">
+              {navigation.legal.map((item) => (
+                <li key={item.name}>
+                  <a href={item.href} className="text-sm/6 text-gray-600 hover:text-gray-900">
+                    {item.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-sm/6 text-gray-600">&copy; 2025 dex Tecnologia LTDA. CNPJ: 48.412.896/0001-42. All rights reserved.</p>
+        </div>
       </div>
     </footer>
   );

@@ -1,91 +1,80 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import { ReactNode } from "react";
-
-const logoImageClassName = "h-26 w-auto max-w-[250px] opacity-70 object-contain";
-
-import { Section } from "../../ui/section";
-
-interface LogoImageProps {
-  name: string;
-  alt: string;
-}
-
-function LogoImage({ name, alt }: LogoImageProps) {
-  return (
-    <>
-      <Image 
-        src={`/Customers Logos/${name}.svg`} 
-        alt={alt} 
-        width={720}
-        height={180}
-        className={`${logoImageClassName} dark:hidden`}
-      />
-      <Image 
-        src={`/clients_logo_dark/${name}.svg`} 
-        alt={alt} 
-        width={720}
-        height={180}
-        className={`${logoImageClassName} hidden dark:block`}
-      />
-    </>
-  );
-}
-
-interface LogoItemProps {
-  logo: ReactNode;
-}
+import { Button } from "@/components/ui/button";
 
 interface LogosProps {
-  title?: string;
-  logoItems?: LogoItemProps[];
   className?: string;
 }
 
-export default function Logos({
-  title = "Trusted by world's leading companies",
-  logoItems = [
-    { logo: <LogoImage name="Caffeine Army" alt="Caffeine Army" /> },
-    { logo: <LogoImage name="Insider" alt="Insider" /> },
-    { logo: <LogoImage name="Linus" alt="Linus" /> },
-    { logo: (
-      <>
-        <Image 
-          src="/Customers Logos/Moon Ventures (3).svg" 
-          alt="Moon Ventures" 
-          width={720}
-          height={180}
-          className={`${logoImageClassName} dark:hidden`}
-        />
-        <Image 
-          src="/clients_logo_dark/Moon Ventures_dark mode.svg" 
-          alt="Moon Ventures" 
-          width={720}
-          height={180}
-          className={`${logoImageClassName} hidden dark:block`}
-        />
-      </>
-    ) },
-    { logo: <LogoImage name="Robbin" alt="Robbin" /> },
-    { logo: <LogoImage name="hubii" alt="Hubii" /> },
-  ],
-  className,
-}: LogosProps) {
+export default function Logos({ className }: LogosProps) {
   return (
-    <Section className={cn(className)}>
-      <div className="max-w-container mx-auto flex flex-col items-center gap-8 text-center">
-        <h2 className="text-md text-muted-foreground font-semibold">{title}</h2>
-        <div className="bg-border dark:bg-border/20 relative grid w-full auto-rows-fr grid-cols-2 gap-[1px] text-center md:grid-cols-3">
-          {logoItems.map((item, index) => (
-            <div
-              key={index}
-              className="bg-background flex aspect-2/1 items-center justify-center "
-            >
-              {item.logo}
+    <div className={cn("bg-white py-12 sm:py-16", className)}>
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid grid-cols-1 items-center gap-x-8 gap-y-16 lg:grid-cols-2">
+          <div className="mx-auto w-full max-w-xl lg:mx-0">
+            <h2 className="text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+              Trusted by the most innovative teams
+            </h2>
+            <p className="mt-6 text-lg/8 text-gray-600">
+              Join thousands of data teams who trust dex to power their most critical analytics workflows. From startups to enterprises, teams choose dex for reliable data engineering solutions.
+            </p>
+            <div className="mt-8 flex items-center gap-x-6">
+              <Button asChild>
+                <a href="/demo">
+                  Book a Demo
+                </a>
+              </Button>
+              <a href="https://app.dexlabs.io" className="text-sm font-semibold text-gray-900 hover:text-gray-700">
+                Sign in <span aria-hidden="true">&rarr;</span>
+              </a>
             </div>
-          ))}
+          </div>
+          <div className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-xl lg:pl-8">
+            <Image
+              alt="Caffeine Army"
+              src="/customers_logos/Caffeine Army.svg"
+              width={105}
+              height={48}
+              className="max-h-20 w-full object-contain object-center"
+            />
+            <Image
+              alt="Insider"
+              src="/customers_logos/Insider.svg"
+              width={104}
+              height={48}
+              className="max-h-20 w-full object-contain object-center"
+            />
+            <Image
+              alt="Linus"
+              src="/customers_logos/Linus.svg"
+              width={140}
+              height={48}
+              className="max-h-20 w-full object-contain object-center"
+            />
+            <Image
+              alt="Moon Ventures"
+              src="/customers_logos/Moon Ventures (3).svg"
+              width={136}
+              height={48}
+              className="max-h-20 w-full object-contain object-center"
+            />
+            <Image
+              alt="Robbin"
+              src="/customers_logos/Robbin.svg"
+              width={158}
+              height={48}
+              className="max-h-20 w-full object-contain object-center"
+            />
+            <Image
+              alt="Hubii"
+              src="/customers_logos/hubii.svg"
+              width={147}
+              height={48}
+              className="max-h-20 w-full object-contain object-center"
+            />
+          </div>
         </div>
       </div>
-    </Section>
+    </div>
   );
 }

@@ -1,9 +1,7 @@
 import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 
-import Glow from "@/components/ui/glow";
 import { Button, type ButtonProps } from "../../ui/button";
-import { Section } from "../../ui/section";
 
 interface CTAButtonProps {
   href: string;
@@ -29,40 +27,37 @@ export default function CTA({
       text: "Book a Demo",
       variant: "default",
     },
+    {
+      href: "/demo",
+      text: "Learn more",
+      variant: "ghost",
+    },
   ],
   className,
 }: CTAProps) {
   return (
-    <Section className={cn("group relative overflow-hidden", className)}>
-      <div className="max-w-container relative z-10 mx-auto flex flex-col items-center gap-6 text-center sm:gap-8">
-        <h2 className="max-w-[640px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
+    <div className={cn("bg-white", className)}>
+      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+        <h2 className="max-w-2xl text-4xl font-semibold tracking-tight text-balance text-gray-900 sm:text-5xl">
           {title}
         </h2>
-        <p className="text-md text-muted-foreground max-w-[600px] font-medium text-balance sm:text-xl">
-          {description}
-        </p>
-        {buttons !== false && buttons.length > 0 && (
-          <div className="flex justify-center gap-4">
-            {buttons.map((button, index) => (
-              <Button
-                key={index}
-                variant={button.variant || "default"}
-                size="lg"
-                asChild
-              >
-                <a href={button.href}>
-                  {button.icon}
-                  {button.text}
-                  {button.iconRight}
+        <div className="mt-10 flex items-center gap-x-6">
+          {buttons !== false && buttons.length > 0 && (
+            <>
+              <Button asChild>
+                <a href={buttons[0].href}>
+                  {buttons[0].text}
                 </a>
               </Button>
-            ))}
-          </div>
-        )}
+              {buttons[1] && (
+                <a href={buttons[1].href} className="text-sm/6 font-semibold text-gray-900">
+                  {buttons[1].text} <span aria-hidden="true">→</span>
+                </a>
+              )}
+            </>
+          )}
+        </div>
       </div>
-      <div className="absolute top-0 left-0 h-full w-full translate-y-[1rem] opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">
-        <Glow variant="bottom" />
-      </div>
-    </Section>
+    </div>
   );
 }

@@ -2,13 +2,11 @@ import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import { Section } from "../../ui/section";
 
-import GlobeIllustration from "@/public/globe";
 import CodeEditorIllustration from "../../illustrations/code-editor";
 import PipelineIllustration from "../../illustrations/pipeline";
 import RippleIllustration from "../../illustrations/ripple";
 import TilesIllustration from "../../illustrations/tiles";
 import { Tile, TileLink, TileContent, TileTitle, TileDescription, TileVisual } from "@/components/ui/tile";
-import Glow from "@/components/ui/glow";
 
 interface TileProps {
   title: string;
@@ -64,18 +62,12 @@ export default function BentoGrid({
         </p>
       ),
       visual: (
-        <div className="min-h-[300px] w-full py-12 flex items-center justify-center relative">
-          <img 
-            src="/bento_icons/orchestrate_light.svg" 
-            alt="Dex orchestration platform" 
-            className="w-full h-auto max-w-[400px] object-contain dark:hidden relative z-10"
+        <div className="flex items-start justify-center pt-4 px-8 -mt-4">
+          <img
+            alt="Dex orchestration performance"
+            src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
+            className="w-full max-w-xs"
           />
-          <img 
-            src="/bento_icons/orchestrate_Dark.svg" 
-            alt="Dex orchestration platform" 
-            className="w-full h-auto max-w-[400px] object-contain hidden dark:block relative z-10"
-          />
-          <Glow variant="center" className="scale-75 opacity-60" />
         </div>
       ),
       size: "col-span-12 md:col-span-6 lg:col-span-4",
@@ -111,7 +103,7 @@ export default function BentoGrid({
   className,
 }: BentoGridProps) {
   return (
-    <Section id="product" className={cn("py-8 sm:py-12 md:py-20", className)}>
+    <Section id="product" className={cn("py-4 sm:py-6 md:py-10", className)}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-4 sm:gap-8">
         <h2 className="text-center text-3xl font-semibold text-balance sm:text-5xl">
           {title}
@@ -133,7 +125,8 @@ export default function BentoGrid({
                 </TileContent>
                 <TileVisual className={cn(
                   index >= 2 ? "mt-[-4rem] mb-[-4rem]" : "",
-                  index === 3 || index === 4 ? "flex items-center justify-center" : ""
+                  index === 3 || index === 4 ? "flex items-center justify-center" : "",
+                  index === 2 ? "items-center" : ""
                 )}>
                   {tile.visual}
                 </TileVisual>

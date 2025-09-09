@@ -6,7 +6,7 @@ import Logos from "@/components/sections/logos/grid-6";
 import Navbar from "@/components/sections/navbar/default";
 import Stats from "@/components/sections/stats/grid-boxed";
 import TabsLeft from "@/components/sections/tabs/left";
-import LogosDefault from "@/components/sections/logos/default"
+import LogosMarquee from "@/components/sections/marquee/default"
 
 export default function Home() {
   return (
@@ -17,7 +17,7 @@ export default function Home() {
     <BentoGrid/>
     <Stats/>
     <TabsLeft/>
-    <LogosDefault/>
+    <LogosMarquee/>
     <CTA/>
     <FooterSection/>
     </>
