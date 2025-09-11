@@ -1,13 +1,13 @@
-import { cn } from "@/lib/utils";
 import DexLogo from "@/components/logos/dex";
+import { cn } from "@/lib/utils";
 
 const navigation = {
   product: [
-    { name: 'Extract & Load', href: '#product' },
-    { name: 'Transform', href: '#product' },
-    { name: 'Orchestrate', href: '#product' },
-    { name: 'AI Copilot', href: '#product' },
-    { name: 'Analytics', href: '#solution' },
+    { name: 'Extract & Load', href: '/#product' },
+    { name: 'Transform', href: '/#product' },
+    { name: 'Orchestrate', href: '/#product' },
+    { name: 'AI Copilot', href: '/#product' },
+    { name: 'Analytics', href: '/#solution' },
   ],
   support: [
     { name: 'Documentation', href: 'https://docs.dexlabs.io' },
