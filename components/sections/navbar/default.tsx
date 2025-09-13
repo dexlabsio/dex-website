@@ -40,7 +40,7 @@ interface NavbarProps {
 }
 
 export default function Navbar({
-  logo = <DexLogo src="/logo.png" alt="DexLabs" />,
+  logo = <DexLogo src="/dex-logo-full-light.svg" alt="DexLabs" />,
   name = "",
   homeUrl = "/",
   mobileLinks = NAV_LINKS.map((link) => ({ text: link.title, href: link.href })),
