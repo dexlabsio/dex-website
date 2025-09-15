@@ -1,9 +1,9 @@
-import { CheckIcon, X } from 'lucide-react';
+import FooterSection from '@/components/sections/footer/minimal';
+import Navbar from '@/components/sections/navbar/default';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { cn } from '@/lib/utils';
-import Navbar from '@/components/sections/navbar/default';
-import FooterSection from '@/components/sections/footer/minimal';
+import { CheckIcon, X } from 'lucide-react';
 
 const tiers = [
   {
@@ -306,22 +306,22 @@ export default function PricingPage() {
                                 >
                                   <dt className="pr-4 text-gray-600">{feature.name}</dt>
                                   <dd className="flex items-center justify-end sm:justify-center sm:px-4">
-                                    {typeof feature.tiers[tier.name] === 'string' ? (
+                                    {(() => { const tierName = tier.name as 'Startups' | 'Professional' | 'Enterprise'; return typeof feature.tiers[tierName] === 'string'; })() ? (
                                       <span
                                         className={tier.featured ? 'font-semibold text-primary' : 'text-gray-900'}
                                       >
-                                        {feature.tiers[tier.name]}
+                                        {(() => { const tierName = tier.name as 'Startups' | 'Professional' | 'Enterprise'; return feature.tiers[tierName]; })()}
                                       </span>
                                     ) : (
                                       <>
-                                        {feature.tiers[tier.name] === true ? (
+                                        {(() => { const tierName = tier.name as 'Startups' | 'Professional' | 'Enterprise'; return feature.tiers[tierName] === true; })() ? (
                                           <CheckIcon aria-hidden="true" className="mx-auto size-5 text-primary" />
                                         ) : (
                                           <X aria-hidden="true" className="mx-auto size-5 text-gray-400" />
                                         )}
 
                                         <span className="sr-only">
-                                          {feature.tiers[tier.name] === true ? 'Yes' : 'No'}
+                                          {(() => { const tierName = tier.name as 'Startups' | 'Professional' | 'Enterprise'; return feature.tiers[tierName] === true ? 'Yes' : 'No'; })()}
                                         </span>
                                       </>
                                     )}
@@ -407,25 +407,25 @@ export default function PricingPage() {
                             {comparisonTiers.map((tier) => (
                               <td key={tier.id} className="w-1/4 px-4 py-4 text-center bg-white shadow-sm border border-gray-100">
                                 <div className="py-1">
-                                  {typeof feature.tiers[tier.name] === 'string' ? (
+                                  {(() => { const tierName = tier.name as 'Startups' | 'Professional' | 'Enterprise'; return typeof feature.tiers[tierName] === 'string'; })() ? (
                                     <span
                                       className={cn(
                                         tier.featured ? 'font-semibold text-primary' : 'text-gray-900',
                                         'text-sm/6',
                                       )}
                                     >
-                                      {feature.tiers[tier.name]}
+                                      {(() => { const tierName = tier.name as 'Startups' | 'Professional' | 'Enterprise'; return feature.tiers[tierName]; })()}
                                     </span>
                                   ) : (
                                     <>
-                                      {feature.tiers[tier.name] === true ? (
+                                      {(() => { const tierName = tier.name as 'Startups' | 'Professional' | 'Enterprise'; return feature.tiers[tierName] === true; })() ? (
                                         <CheckIcon aria-hidden="true" className="mx-auto size-5 text-primary" />
                                       ) : (
                                         <X aria-hidden="true" className="mx-auto size-5 text-gray-400" />
                                       )}
 
                                       <span className="sr-only">
-                                        {feature.tiers[tier.name] === true ? 'Yes' : 'No'}
+                                        {(() => { const tierName = tier.name as 'Startups' | 'Professional' | 'Enterprise'; return feature.tiers[tierName] === true ? 'Yes' : 'No'; })()}
                                       </span>
                                     </>
                                   )}
