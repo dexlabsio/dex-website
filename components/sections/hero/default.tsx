@@ -27,7 +27,7 @@ export default function Hero({ }: HeroProps) {
         </defs>
         <rect fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)" width="100%" height="100%" strokeWidth={0} />
       </svg>
-      <div className="mx-auto max-w-7xl px-6 pt-10 pb-12 sm:pb-16 lg:flex lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-container px-6 pt-10 pb-12 sm:pb-16 lg:flex lg:px-8 lg:py-20">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:shrink-0">
           <div className="mt-8 sm:mt-12 lg:mt-0">
             <div className="inline-flex space-x-6">

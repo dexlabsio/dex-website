@@ -32,7 +32,7 @@ function PipelineIllustration() {
                 <Beam tone="brandLight">
                   <div className="relative z-10">
                     <img 
-                      src="/dex-logo-light.png" 
+                      src="/dex-logo-symbol-light.svg" 
                       alt="Dex Logo" 
                       className="h-6 w-auto sm:h-8 dark:hidden"
                     />

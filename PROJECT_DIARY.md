@@ -346,3 +346,33 @@ When working on this project:
     - **Directory Structure**: Confirmed original subdirectory structure was correct (hero/default.tsx, cta/default.tsx, etc.), only reverted marquee-2-rows.tsx to flat naming
     - **Asset Organization**: Maintained public directory structure with spaces in "Customers Logos" folder
     - **Build Optimization**: All TypeScript compilation errors resolved, build process streamlined, maintained full functionality
+  - **E-Commerce Updates (September 13, 2025)**:
+    - **New Branch**: Created `e-commerce-updates` branch for comprehensive pricing page development
+    - **Width Consistency Fix**: Updated hero section width from `max-w-7xl` to `max-w-container` and added Tailwind config for consistent site-wide width
+    - **Logo System Overhaul**: 
+      - Updated navbar logo from `/logo.png` to `/dex-logo-full-light.svg`
+      - Simplified DexLogo component from hardcoded dual-mode to props-based implementation
+      - Replaced footer logo from `/logo.png` to `/dex-logo-symbol-light.svg`
+      - Updated pipeline illustration to use `/dex-logo-symbol-light.svg` for light mode only
+      - Fixed multiple 404 logo errors across the site
+    - **Comprehensive Pricing Page Creation** (`/app/pricing/page.tsx`):
+      - Built 4-tier pricing structure: Trial ($0), Startups ($99), Professional ($299), Enterprise (Custom)
+      - Implemented dual array system: `tiers` (with Trial) and `comparisonTiers` (without Trial) for different sections
+      - Added responsive design: 4-column grid on large screens, 3-column on medium screens
+      - Created feature comparison table with 8 categories imported from CSV data
+      - Enhanced Enterprise tier as the highlighted/emphasized option
+      - Updated pricing copy: "Transparent Pricing, No Surprises" with usage-based pricing messaging
+    - **Feature Comparison Component**:
+      - Integrated CSV data parsing for comprehensive feature table
+      - Removed Trial tier from comparison table per requirements
+      - Fixed alignment issues between feature cells and plan titles
+      - Removed border radius for cleaner table appearance
+      - Updated support levels: Enterprise uses "Slack support" instead of phone support
+      - Added "Professional Services" row to Support category
+    - **Navigation Enhancement**: Added Pricing link to main navigation
+    - **Content Updates**: Changed "Monthly Pipeline Runs" to "Monthly Runs" across both components
+    - **Technical Fixes**: 
+      - Resolved TypeScript type errors when accessing tier properties
+      - Fixed table alignment problems with proper grid layout
+      - Eliminated border overlapping issues
+      - Maintained responsive design patterns throughout

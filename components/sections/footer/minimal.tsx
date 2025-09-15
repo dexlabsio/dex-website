@@ -70,7 +70,7 @@ export default function FooterSection({
       <div className="mx-auto max-w-7xl px-6 pt-16 pb-8 sm:pt-24 lg:px-8 lg:pt-32">
         <div className="grid grid-cols-2 gap-8 xl:grid-cols-5">
           <div className="col-span-2">
-            <DexLogo src="/logo.png" alt="dex" className="h-9 w-auto" />
+            <DexLogo src="/dex-logo-symbol-light.svg" alt="dex" className="h-9 w-auto" />
             <p className="mt-4 text-sm/6 text-balance text-gray-600">
               The unified data platform that makes it easy to get answers, make decisions and automate processes.
             </p>
