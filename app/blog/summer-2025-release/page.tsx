@@ -6,27 +6,27 @@ const features = [
   {
     name: 'New Orchestration UI',
     description:
-      'Redesigned interface for managing data workflows with enhanced visibility, simplified scheduling, and intuitive pipeline monitoring.',
+      'Revolutionary Flow experience built for enterprise scale. Orchestrate hundreds of tasks with auto-DAG creation, dependency management, and seamless monitoring integration.',
     icon: Settings,
   },
   {
     name: 'Notification Center',
-    description: 'Stay informed with real-time alerts for pipeline status, data quality issues, and system updates across all your workflows.',
+    description: 'Enterprise-grade monitoring with real-time alerts, Slack integration, and comprehensive observability for every pipeline execution at scale.',
     icon: Bell,
   },
   {
     name: 'dex Connectors Ultra',
-    description: 'High-performance connectors with 50x faster data ingestion, advanced error handling, and support for complex data transformations.',
+    description: 'Rust-powered ultra-high performance connectors for large volumes of data. Seamless CDC integration enables real-time data synchronization at enterprise scale.',
     icon: Zap,
   },
   {
     name: 'BI Module',
-    description: 'Native business intelligence capabilities with pre-built dashboards, custom visualizations, and automated reporting features.',
+    description: 'Complete the data journey with integrated self-service analytics. Democratize insights with intuitive dashboards and collaborative business intelligence.',
     icon: BarChart3,
   },
   {
     name: 'Improvements in dex AI Copilot',
-    description: 'Enhanced natural language processing for SQL generation, smarter data recommendations, and context-aware assistance.',
+    description: 'Context-aware AI assistance with specialized agents, drag-and-drop model integration, and intelligent SQL generation for enhanced productivity.',
     icon: Bot,
   },
 ]
@@ -42,7 +42,7 @@ export default function SummerReleasePage() {
             <div className="hidden sm:mb-8 sm:flex sm:justify-center">
               <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                 Summer 2025 Release{' '}
-                <a href="#" className="font-semibold text-indigo-600">
+                <a href="#features" className="font-semibold text-primary">
                   <span aria-hidden="true" className="absolute inset-0" />
                   Read more <span aria-hidden="true">&rarr;</span>
                 </a>
@@ -54,13 +54,12 @@ export default function SummerReleasePage() {
               Efficiency Meets Scale
             </h1>
             <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-              Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-              fugiat veniam occaecat.
+              Five game-changing features that transform how you build, monitor, and scale your data operations. From lightning-fast connectors to intelligent AI assistance, every enhancement is designed to handle enterprise-scale workloads with unprecedented efficiency.
             </p>
             <div className="mt-10 flex items-center justify-center">
               <a
                 href="/demo"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
               >
                 Get in touch
               </a>
@@ -70,7 +69,7 @@ export default function SummerReleasePage() {
       </div>
 
       {/* Features Section */}
-      <div className="overflow-hidden bg-white py-12 sm:py-16">
+      <div id="features" className="overflow-hidden bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-container px-6 lg:px-8">
           {/* Centered Image at Top */}
           <div className="mx-auto max-w-4xl mb-16 lg:mb-20">
@@ -88,12 +87,12 @@ export default function SummerReleasePage() {
 
           {/* Text Content Below */}
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="text-base/7 font-semibold text-indigo-600">Summer 2025 Release</h2>
+            <h2 className="text-base/7 font-semibold text-primary">Summer 2025 Release</h2>
             <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
               Five game-changing features
             </p>
             <p className="mt-6 text-lg/8 text-gray-700 mx-auto max-w-2xl">
-              Our biggest release yet brings powerful new capabilities to streamline your data operations, enhance collaboration, and accelerate insights across your entire data lifecycle.
+              Built for enterprise scale, this comprehensive release delivers revolutionary orchestration, intelligent monitoring, ultra-fast connectors, integrated business intelligence, and enhanced AI assistance — completing your end-to-end data platform.
             </p>
           </div>
 
@@ -103,7 +102,7 @@ export default function SummerReleasePage() {
               {features.map((feature) => (
                 <div key={feature.name} className="relative">
                   <dt className="flex items-center text-base font-semibold text-gray-900">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 mr-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary mr-4">
                       <feature.icon aria-hidden="true" className="h-6 w-6 text-white" />
                     </div>
                     {feature.name}
@@ -120,32 +119,38 @@ export default function SummerReleasePage() {
       <div className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-container px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <p className="text-base/7 font-semibold text-indigo-600">New Orchestration UI</p>
+            <div className="flex items-center gap-3">
+              <p className="text-base/7 font-semibold text-primary">New Orchestration UI</p>
+              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+                Coming Soon
+              </span>
+            </div>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-              Redesigned workflow management
+              Redesigned Flow Experience
             </h1>
             <div className="mt-10 max-w-4xl text-base/7 text-gray-700">
               <p>
-                Experience a completely redesigned interface for managing your data workflows with unprecedented clarity and control. Our new Orchestration UI transforms complex pipeline management into an intuitive, visual experience that puts you in command of your entire data ecosystem.
+                Built for scale from the ground up, our new Orchestration UI revolutionizes how you manage complex data workflows at enterprise scale. Building on dex&apos;s proven auto-DAG creation concepts, this declarative orchestration experience eliminates the friction of managing hundreds or thousands of tasks simultaneously.
               </p>
               <p className="mt-8">
-                Enhanced visibility means you can monitor pipeline status, track data lineage, and identify bottlenecks at a glance. Simplified scheduling with drag-and-drop functionality makes it effortless to orchestrate complex workflows across multiple data sources. Real-time monitoring provides instant insights into pipeline performance and health metrics.
+                Select any combination of workloads — from data ingestion and SQL transformations to custom Python scripts — and orchestrate them with unprecedented efficiency. Choose specific models or model tags from your development work, or select upstream and downstream dependencies to instantly add entire pipeline chains to your task list. dex automatically designs optimal execution order and dependencies, creating a seamless, error-proof experience. Chain multiple pipelines together to define custom execution sequences that match your exact requirements.
+              </p>
+              <p className="mt-8">
+                This transforms how teams work at scale: orchestrate enterprise-scale workflows in minutes instead of days, with complete transparency into upstream and downstream lineage. Enhanced by our native Notification Center, every orchestrated workflow benefits from real-time alerts and comprehensive observability. Maximum reliability meets maximum efficiency, finally delivering the orchestration experience that scales with your ambitions.
               </p>
             </div>
           </div>
         </div>
         <div className="relative overflow-hidden pt-16 lg:pt-20">
           <div className="mx-auto max-w-container px-6 lg:px-8">
-            <div className="aspect-video rounded-xl shadow-2xl ring-1 ring-gray-900/10 bg-gray-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="mx-auto h-12 w-12 text-gray-400">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h6m-3-3v6m-3 3l3-3 3 3" />
-                  </svg>
-                </div>
-                <p className="mt-2 text-sm text-gray-500">16:9 Video Placeholder - New Orchestration UI Demo</p>
-              </div>
-            </div>
+            <video
+              className="aspect-video rounded-xl shadow-2xl ring-1 ring-gray-900/10 w-full"
+              controls
+              preload="metadata"
+            >
+              <source src="/Summer 2025 Launch Week/orchestration_ux_summer_release.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
@@ -159,7 +164,7 @@ export default function SummerReleasePage() {
       <div className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-container px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <p className="text-base/7 font-semibold text-indigo-600">Notification Center</p>
+            <p className="text-base/7 font-semibold text-primary">Notification Center</p>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
               Monitor every pipeline execution
             </h1>
@@ -172,7 +177,7 @@ export default function SummerReleasePage() {
             </div>
             <div className="mt-10 max-w-4xl text-base/7 text-gray-700">
               <p>
-                You shouldn't have to dig through logs or jump between tools to know what's happening with your data. With our new Notification Center, you can now monitor and track every pipeline execution in real time — right from dex.
+                You shouldn&apos;t have to dig through logs or jump between tools to know what&apos;s happening with your data. With our new Notification Center, you can now monitor and track every pipeline execution in real time — right from dex.
               </p>
               <p className="mt-8">
                 Built for scale, the Notification Center lets you configure alerts for specific Flows, choose severity levels and trigger points (start, success, failure), and get messages sent directly to Slack channels. Bulk configuration capabilities mean you can start monitoring one or several pipelines with zero friction, while detailed end-to-end error descriptions enable faster troubleshooting across your entire data infrastructure.
@@ -206,13 +211,13 @@ export default function SummerReleasePage() {
       <div className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-container px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <p className="text-base/7 font-semibold text-indigo-600">dex Connectors Ultra</p>
+            <p className="text-base/7 font-semibold text-primary">dex Connectors Ultra</p>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
               Lightning-fast data ingestion
             </h1>
             <div className="mt-10 max-w-4xl text-base/7 text-gray-700">
               <p>
-                We're excited to introduce dex Connectors Ultra, our new Rust-based connectors for high-performance data replication and CDC. This feature emerged from direct customer needs, and our team delivered it rapidly. What made this possible wasn't just the development sprint, but the years we've invested building a solid foundation for performance, extensibility, and cloud efficiency.
+                We&apos;re excited to introduce dex Connectors Ultra, our new Rust-based connectors for high-performance data replication and CDC. This feature emerged from direct customer needs, and our team delivered it rapidly. What made this possible wasn&apos;t just the development sprint, but the years we&apos;ve invested building a solid foundation for performance, extensibility, and cloud efficiency.
               </p>
               <p className="mt-8">
                 dex Connectors Ultra delivers ultra-high performance when handling large volumes of data. In real-world testing, we replicated 230GB / 2.3B records in just 22 minutes, with minimal infrastructure requirements. Our Rust-based technology handles historical snapshots and large volume ingestion for Postgres, MySQL, and SQL Server databases, seamlessly integrating with CDC for incremental data collection based on logs.
@@ -243,31 +248,25 @@ export default function SummerReleasePage() {
       <div className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-container px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <p className="text-base/7 font-semibold text-indigo-600">BI Module</p>
+            <div className="flex items-center gap-3">
+              <p className="text-base/7 font-semibold text-primary">BI Module</p>
+              <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
+                Coming Soon
+              </span>
+            </div>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
               Native business intelligence
             </h1>
             <div className="mt-10 max-w-4xl text-base/7 text-gray-700">
               <p>
-                Transform your data into actionable insights with our built-in Business Intelligence module. Create stunning dashboards, generate automated reports, and build custom visualizations without leaving the dex platform. Pre-built templates for common business metrics get you started instantly.
+                Complete your data journey with a comprehensive BI module integrated directly into the dex platform. Create dynamic charts and analysis, build and share interactive dashboards, explore data with self-service analytics, and collaborate seamlessly across teams — all designed to democratize data insights and extract maximum value without ever leaving dex.
               </p>
               <p className="mt-8">
-                Drag-and-drop dashboard builder makes it easy for non-technical users to create powerful visualizations. Automated report scheduling ensures stakeholders receive critical insights when they need them. Advanced analytics capabilities including trend analysis, forecasting, and anomaly detection help you stay ahead of the curve.
+                This represents a significant step toward our vision of an integrated data platform that spans the entire data lifecycle. Now dex users can derive real business value from data processed by dex, with intuitive drag-and-drop visualization tools that make complex data accessible to everyone — from data analysts to business stakeholders. The complete data journey — ingestion, transformation, orchestration, and self-service business intelligence — unified in a single platform.
               </p>
-            </div>
-          </div>
-        </div>
-        <div className="relative overflow-hidden pt-16 lg:pt-20">
-          <div className="mx-auto max-w-container px-6 lg:px-8">
-            <div className="aspect-video rounded-xl shadow-2xl ring-1 ring-gray-900/10 bg-gray-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="mx-auto h-12 w-12 text-gray-400">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <p className="mt-2 text-sm text-gray-500">16:9 Video Placeholder - BI Module Demo</p>
-              </div>
+              <p className="mt-8">
+                Currently in internal testing, the BI module will be available to all dex users in the coming weeks, delivering enterprise-grade business intelligence capabilities with the ease-of-use that empowers every team member to become data-driven.
+              </p>
             </div>
           </div>
         </div>
@@ -282,7 +281,7 @@ export default function SummerReleasePage() {
       <div className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-container px-6 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
-            <p className="text-base/7 font-semibold text-indigo-600">Improvements in dex AI Copilot</p>
+            <p className="text-base/7 font-semibold text-primary">Improvements in dex AI Copilot</p>
             <h1 className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
               Smarter AI assistance
             </h1>
@@ -301,16 +300,14 @@ export default function SummerReleasePage() {
         </div>
         <div className="relative overflow-hidden pt-16 lg:pt-20">
           <div className="mx-auto max-w-container px-6 lg:px-8">
-            <div className="aspect-video rounded-xl shadow-2xl ring-1 ring-gray-900/10 bg-gray-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="mx-auto h-12 w-12 text-gray-400">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                </div>
-                <p className="mt-2 text-sm text-gray-500">16:9 Video Placeholder - dex AI Copilot Demo</p>
-              </div>
-            </div>
+            <video
+              className="aspect-video rounded-xl shadow-2xl ring-1 ring-gray-900/10 w-full"
+              controls
+              preload="metadata"
+            >
+              <source src="/Summer 2025 Launch Week/ai_assistance_summer_release.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>
