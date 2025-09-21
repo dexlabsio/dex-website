@@ -1,6 +1,34 @@
 import Navbar from '@/components/sections/navbar/default';
 import FooterSection from '@/components/sections/footer/minimal';
 import { Settings, Bell, Zap, BarChart3, Bot } from 'lucide-react';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Summer 2025 Release: Efficiency Meets Scale | dex',
+  description: 'Five game-changing features that transform how you build, monitor, and scale your data operations. Lightning-fast connectors, intelligent monitoring, enhanced AI assistance, and more.',
+  openGraph: {
+    title: 'Summer 2025 Release: Efficiency Meets Scale | dex',
+    description: 'Five game-changing features that transform how you build, monitor, and scale your data operations. Lightning-fast connectors, intelligent monitoring, enhanced AI assistance, and more.',
+    url: 'https://dexlabs.io/blog/summer-2025-release',
+    siteName: 'dex',
+    images: [
+      {
+        url: '/Q3 2025 - Launch Week Banner.png',
+        width: 1200,
+        height: 675,
+        alt: 'dex Summer 2025 Release - Efficiency Meets Scale',
+      },
+    ],
+    locale: 'en_US',
+    type: 'article',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Summer 2025 Release: Efficiency Meets Scale | dex',
+    description: 'Five game-changing features that transform how you build, monitor, and scale your data operations.',
+    images: ['/Q3 2025 - Launch Week Banner.png'],
+  },
+};
 
 const features = [
   {
@@ -73,16 +101,11 @@ export default function SummerReleasePage() {
         <div className="mx-auto max-w-container px-6 lg:px-8">
           {/* Centered Image at Top */}
           <div className="mx-auto max-w-4xl mb-16 lg:mb-20">
-            <div className="aspect-video rounded-xl shadow-2xl ring-1 ring-gray-900/10 bg-gray-100 flex items-center justify-center">
-              <div className="text-center">
-                <div className="mx-auto h-16 w-16 text-gray-400">
-                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                </div>
-                <p className="mt-3 text-base text-gray-500">16:9 Illustration Placeholder - Five Game-Changing Features</p>
-              </div>
-            </div>
+            <img
+              src="/Q3 2025 - Launch Week Banner.png"
+              alt="dex Summer 2025 Release - Five Game-Changing Features"
+              className="aspect-video rounded-xl shadow-2xl ring-1 ring-gray-900/10 w-full object-cover"
+            />
           </div>
 
           {/* Text Content Below */}
