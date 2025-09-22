@@ -2,11 +2,18 @@ import { cn } from "@/lib/utils";
 import { ReactNode } from "react";
 import { Section } from "../../ui/section";
 
+import {
+  Tile,
+  TileContent,
+  TileDescription,
+  TileLink,
+  TileTitle,
+  TileVisual,
+} from "@/components/ui/tile";
 import CodeEditorIllustration from "../../illustrations/code-editor";
 import PipelineIllustration from "../../illustrations/pipeline";
 import RippleIllustration from "../../illustrations/ripple";
 import TilesIllustration from "../../illustrations/tiles";
-import { Tile, TileLink, TileContent, TileTitle, TileDescription, TileVisual } from "@/components/ui/tile";
 
 interface TileProps {
   title: string;
@@ -30,7 +37,9 @@ export default function BentoGrid({
       title: "Extract & Load",
       description: (
         <p className="max-w-[460px]">
-          High-performance connectors for transactional databases, business tools, and spreadsheets, all natively integrated with the rest of your data lifecycle.
+          High-performance connectors for transactional databases, business
+          tools, and spreadsheets, all natively integrated with the rest of your
+          data lifecycle.
         </p>
       ),
       visual: (
@@ -44,7 +53,9 @@ export default function BentoGrid({
       title: "Develop",
       description: (
         <p className="max-w-[320px] lg:max-w-[460px]">
-          Define, test, and document your transformations with a modern, AI-assisted workflow. Build in minutes with native Git integration, automated lineage tracking, and built-in linting.
+          Define, test, and document your transformations with a modern,
+          AI-assisted workflow. Build in minutes with native Git integration,
+          automated lineage tracking, and built-in linting.
         </p>
       ),
       visual: (
@@ -58,11 +69,12 @@ export default function BentoGrid({
       title: "Orchestrate",
       description: (
         <p>
-          Auto-DAGs, built-in retries, and full observability. Automation and scheduling that just works, out of the box.
+          Auto-DAGs, built-in retries, and full observability. Automation and
+          scheduling that just works, out of the box.
         </p>
       ),
       visual: (
-        <div className="flex items-start justify-center pt-4 px-8 -mt-4">
+        <div className="flex items-start justify-center pt-4 px-8 ">
           <img
             alt="Dex orchestration performance"
             src="https://tailwindcss.com/plus-assets/img/component-images/bento-03-performance.png"
@@ -87,7 +99,8 @@ export default function BentoGrid({
       title: "Minimal Costs",
       description: (
         <p className="max-w-[460px]">
-          Fixed, predictable pricing. dex is 4–8x more cost-effective than building your own data platform or stitching together multiple tools
+          Fixed, predictable pricing. dex is 4–8x more cost-effective than
+          building your own data platform or stitching together multiple tools
         </p>
       ),
       visual: (
@@ -114,20 +127,21 @@ export default function BentoGrid({
         {tiles !== false && tiles.length > 0 && (
           <div className="grid grid-cols-12 gap-4">
             {tiles.map((tile, index) => (
-              <Tile 
-                key={index} 
-                className={cn(tile.size)}
-              >
+              <Tile key={index} className={cn(tile.size)}>
                 <TileLink />
                 <TileContent>
                   <TileTitle>{tile.title}</TileTitle>
                   <TileDescription>{tile.description}</TileDescription>
                 </TileContent>
-                <TileVisual className={cn(
-                  index >= 2 ? "mt-[-4rem] mb-[-4rem]" : "",
-                  index === 3 || index === 4 ? "flex items-center justify-center" : "",
-                  index === 2 ? "items-center" : ""
-                )}>
+                <TileVisual
+                  className={cn(
+                    index >= 2 ? "md:mt-[-4rem] md:mb-[-4rem]" : "",
+                    index === 3 || index === 4
+                      ? "flex items-center justify-center"
+                      : "",
+                    index === 2 ? "items-start md:items-center order-last md:order-none" : ""
+                  )}
+                >
                   {tile.visual}
                 </TileVisual>
               </Tile>

@@ -1,44 +1,36 @@
-import { ChevronRightIcon } from 'lucide-react';
 import FlowScreenshotIllustration from "@/components/illustrations/flow-screenshot";
 import { Button } from "@/components/ui/button";
+import { ChevronRightIcon } from "lucide-react";
 
 interface HeroProps {
   className?: string;
 }
 
-export default function Hero({ }: HeroProps) {
+export default function Hero({}: HeroProps) {
   return (
     <div className="relative isolate overflow-hidden bg-white">
-      <svg
-        aria-hidden="true"
-        className="absolute inset-0 -z-10 size-full mask-[radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-gray-200"
-      >
-        <defs>
-          <pattern
-            x="50%"
-            y={-1}
-            id="0787a7c5-978c-4f66-83c7-11c213f99cb7"
-            width={200}
-            height={200}
-            patternUnits="userSpaceOnUse"
-          >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <rect fill="url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)" width="100%" height="100%" strokeWidth={0} />
-      </svg>
-      <div className="mx-auto max-w-container px-6 pt-10 pb-12 sm:pb-16 lg:flex lg:px-8 lg:py-20">
+      <div className="mx-auto max-w-container px-6 pt-10 pb-12 sm:pb-16 lg:flex lg:px-8 lg:py-20 overflow-hidden">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:shrink-0">
           <div className="mt-8 sm:mt-12 lg:mt-0">
             <div className="inline-flex space-x-6">
-              <a href="https://dex-labs-1.gitbook.io/dex/major-releases/q1-2025-spring-release" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://dex-labs-1.gitbook.io/dex/major-releases/q1-2025-spring-release"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="rounded-full bg-indigo-50 px-3 py-1 text-sm/6 font-semibold text-indigo-600 ring-1 ring-indigo-600/20 ring-inset">
                   What&apos;s new
                 </span>
               </a>
-              <a href="#product" className="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-600 hover:text-gray-900 transition-colors">
+              <a
+                href="#product"
+                className="inline-flex items-center space-x-2 text-sm/6 font-medium text-gray-600 hover:text-gray-900 transition-colors"
+              >
                 <span>Unified data platform</span>
-                <ChevronRightIcon aria-hidden="true" className="size-5 text-gray-400" />
+                <ChevronRightIcon
+                  aria-hidden="true"
+                  className="size-5 text-gray-400"
+                />
               </a>
             </div>
           </div>
@@ -46,15 +38,17 @@ export default function Hero({ }: HeroProps) {
             The simplest path to reliable data
           </h1>
           <p className="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-            dex is a unified data platform that makes it easy to get answers, make decisions and automate processes.
+            dex is a unified data platform that makes it easy to get answers,
+            make decisions and automate processes.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
             <Button asChild>
-              <a href="/demo">
-                Book a Demo
-              </a>
+              <a href="/demo">Book a Demo</a>
             </Button>
-            <a href="https://app.dexlabs.io" className="text-sm/6 font-semibold text-gray-900">
+            <a
+              href="https://app.dexlabs.io"
+              className="text-sm/6 font-semibold text-gray-900"
+            >
               Sign in <span aria-hidden="true">→</span>
             </a>
           </div>
