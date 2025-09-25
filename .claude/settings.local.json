@@ -14,7 +14,9 @@
       "Bash(git commit:*)",
       "Bash(git pull:*)",
       "Bash(git checkout:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(claude doctor)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
