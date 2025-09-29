@@ -90,10 +90,12 @@ dex is a unified data platform that makes it easy to get answers, make decisions
 ## Key Design Principles
 
 ### Design System
-- **Pure White Background**: All sections use `bg-white`
-- **Consistent Spacing**: Reduced by 50% from original design:
-  - Sections: `py-6 sm:py-12 md:py-16` (was `py-12 sm:py-24 md:py-32`)
-  - Hero: `pt-10 pb-12 sm:pb-16 lg:py-20`
+- **Pure White Background**: All sections use `bg-white` with no fog effects or colored overlays
+- **Consistent Spacing**: Standard spacing applied across all pages:
+  - **Navbar to Hero**: `pt-10` (top padding for hero section)
+  - **Sections**: `py-12 sm:py-16` (standard section vertical spacing)
+  - **Hero**: `pt-10 pb-12 sm:pb-16 lg:py-20` (navbar spacing + section spacing)
+  - **Section Component**: `py-6 sm:py-12 md:py-16` (alternative via Section component)
 - **Brand Blue Buttons**: All primary buttons use the Button component with default variant
 - **Responsive Design**: Mobile-first approach with lg/xl breakpoints
 
@@ -400,3 +402,10 @@ When working on this project:
       - Resolved internal server errors with proper JSX structure and indentation
       - Added proper anchor links for navigation
       - Cleared Next.js cache issues for stable development server
+  - **Extract & Load Product Page Updates (September 29, 2025)**:
+    - **CTA Section Enhancement**: Replaced placeholder Unsplash image with actual dex platform screenshot (`/platform_screenshots/Connectors.png`) for authentic product demonstration
+    - **Additional Resources Cleanup**: Removed date text and author/profile information from resource cards for cleaner, more focused layout
+    - **Features Section Content Updates**:
+      - Removed AI assistance mention from "Easy to Configure" section subtitle for more accurate messaging
+      - Updated "High-Performance Connectors" feature description to remove "200+" connectors claim and emphasize specific data source types: databases, SaaS applications, spreadsheets and files
+      - Maintained accurate feature descriptions while improving content precision
