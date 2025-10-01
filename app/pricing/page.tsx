@@ -1,5 +1,5 @@
 import FooterSection from '@/components/sections/footer/minimal';
-import Navbar from '@/components/sections/navbar/default';
+import DexNavbar from '@/components/sections/navbar/dex-navbar';
 import { Button } from '@/components/ui/button';
 import { Section } from '@/components/ui/section';
 import { cn } from '@/lib/utils';
@@ -155,7 +155,7 @@ const featureSections = [
 export default function PricingPage() {
   return (
     <>
-      <Navbar />
+      <DexNavbar />
       <div className="bg-white">
         <Section className="pt-10 pb-12 sm:pb-16 lg:py-20">
         <div className="mx-auto max-w-container">

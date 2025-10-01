@@ -1,4 +1,6 @@
 import { Metadata } from 'next';
+import DexNavbar from '@/components/sections/navbar/dex-navbar';
+import FooterSection from '@/components/sections/footer/minimal';
 
 export const metadata: Metadata = {
   title: 'Terms of Service - dex',
@@ -7,6 +9,8 @@ export const metadata: Metadata = {
 
 export default function TermsOfService() {
   return (
+    <>
+      <DexNavbar />
     <div className="bg-white px-6 py-24 sm:py-32 lg:px-8">
       <div className="mx-auto max-w-4xl text-base/7 text-gray-700">
         <div className="mx-auto max-w-2xl lg:mx-0">
@@ -131,5 +135,7 @@ export default function TermsOfService() {
         </div>
       </div>
     </div>
+    <FooterSection />
+    </>
   );
 }

@@ -1,5 +1,5 @@
 import FooterSection from "@/components/sections/footer/minimal";
-import Navbar from "@/components/sections/navbar/default";
+import DexNavbar from "@/components/sections/navbar/dex-navbar";
 
 export const metadata = {
   title: "Information Security Policy - dex",
@@ -9,7 +9,7 @@ export const metadata = {
 export default function SecurityPolicy() {
   return (
     <>
-      <Navbar />
+      <DexNavbar />
       <div className="min-h-screen bg-background">
         <div className="max-w-4xl mx-auto px-4 py-16">
           <h1 className="text-4xl font-bold mb-8">Information Security Policy</h1>

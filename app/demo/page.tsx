@@ -2,7 +2,7 @@
 
 import { Zap, TrendingUp, Users } from 'lucide-react';
 import FooterSection from "@/components/sections/footer/minimal";
-import Navbar from "@/components/sections/navbar/default";
+import DexNavbar from "@/components/sections/navbar/dex-navbar";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -78,7 +78,7 @@ export default function DemoPage() {
 
   return (
     <>
-      <Navbar />
+      <DexNavbar />
       <div className="relative isolate bg-white">
         <div className="mx-auto grid max-w-7xl grid-cols-1 lg:grid-cols-2">
           <div className="relative px-6 pt-12 pb-20 sm:pt-16 lg:static lg:px-8 lg:py-24">

@@ -1,4 +1,4 @@
-import Navbar from '@/components/sections/navbar/default';
+import DexNavbar from '@/components/sections/navbar/dex-navbar';
 import FooterSection from '@/components/sections/footer/minimal';
 import { Settings, Bell, Zap, BarChart3, Bot } from 'lucide-react';
 import { Metadata } from 'next';
@@ -62,7 +62,7 @@ const features = [
 export default function SummerReleasePage() {
   return (
     <div className="bg-white">
-      <Navbar />
+      <DexNavbar />
 
       <div className="relative isolate px-6 pt-10 lg:px-8">
         <div className="mx-auto max-w-2xl pb-12 sm:pb-16 lg:pb-20">
