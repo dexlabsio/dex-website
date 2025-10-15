@@ -327,10 +327,32 @@ When working on this project:
 
 ---
 
-*Last Updated: September 2025*
+*Last Updated: October 2025*
 *This diary should be updated whenever significant changes are made to the project.*
 
 ### Recent Updates
+- **October 2025**:
+  - **Nubank Acquisition Announcement (October 15, 2025)**:
+    - **Blog Post Creation**: Created comprehensive acquisition announcement blog post at `/app/blog/nubank-acquires-dex/page.tsx`
+      - Professional article layout with author bio, metadata, and social sharing capabilities
+      - Includes acquisition details, transition timeline (platform operates until February 1st, 2026), and migration guidance
+      - Features prominent acquisition banner image (`/Nu_dex_acquistion_banner (1).svg`)
+      - Styled with consistent typography matching dex brand design system (text-5xl/6xl headlines, proper spacing, gray-700 body text)
+      - Tags: "Announcements" and "Company"
+      - Author: Gustavo Beltrami, CEO
+      - Metadata optimized for SEO and social sharing
+    - **Acquisition Banner Component**: Created dismissible announcement banner at `/components/sections/banner/acquisition-announcement.tsx`
+      - Appears at top of homepage above navbar
+      - Uses primary brand color background with white text
+      - Client-side component with useState for dismiss functionality
+      - Links directly to acquisition blog post
+      - Accessible with proper ARIA labels and focus management
+    - **Homepage Integration**: Updated `/app/page.tsx` to include AcquisitionAnnouncementBanner at top of page
+    - **Design System Consistency**: All components follow established dex design patterns:
+      - Typography: Uses consistent heading scales (text-4xl, text-5xl, text-6xl)
+      - Colors: Primary brand colors, gray-700 for body text, gray-900 for headings
+      - Spacing: Proper section padding and content spacing (mt-6, mt-8, mt-12, mt-16)
+      - Accessibility: Semantic HTML, proper ARIA labels, keyboard navigation support
 - **September 2025**: 
   - **Directory Simplification**: Moved all project files from `dex-website-2025/` subdirectory to root directory for cleaner development workflow
   - **Color Scheme Update**: Changed primary colors from dex blue to indigo (indigo-600/indigo-500) with solid button styles

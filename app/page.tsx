@@ -1,3 +1,4 @@
+import AcquisitionAnnouncementBanner from "@/components/sections/banner/acquisition-announcement";
 import BentoGrid from "@/components/sections/bento-grid/2-rows-top";
 import CTA from "@/components/sections/cta/default";
 import FooterSection from "@/components/sections/footer/minimal";
@@ -11,6 +12,7 @@ import LogosMarquee from "@/components/sections/marquee-2-rows"
 export default function Home() {
   return (
     <>
+    <AcquisitionAnnouncementBanner/>
     <Navbar/>
     <Hero/>
     <Logos/>
