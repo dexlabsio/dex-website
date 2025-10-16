@@ -1,3 +1,5 @@
+import { BannerProvider } from "@/components/providers/banner-context";
+import BannerWithSpacer from "@/components/sections/banner/banner-with-spacer";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Geist_Mono, Inter } from "next/font/google";
@@ -35,7 +37,10 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {children}
+          <BannerProvider>
+            <BannerWithSpacer />
+            {children}
+          </BannerProvider>
         </ThemeProvider>
       </body>
     </html>
