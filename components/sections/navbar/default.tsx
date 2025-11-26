@@ -50,7 +50,7 @@ export default function Navbar({
   actions = [
     { text: "Sign in", href: "https://app.dexlabs.io", isButton: false },
     {
-      text: "Book a Demo",
+      text: "Talk to Us",
       href: "/demo",
       isButton: true,
       variant: "default",
