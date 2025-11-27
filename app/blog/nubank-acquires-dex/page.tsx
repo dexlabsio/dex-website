@@ -1,7 +1,6 @@
-import { Metadata } from "next";
-import { Share2, ArrowLeft } from "lucide-react";
-import Link from "next/link";
 import Navbar from "@/components/sections/navbar/default";
+import { Share2 } from "lucide-react";
+import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Nubank acquires dex to accelerate data and AI strategy | dex",
@@ -16,14 +15,7 @@ export default function NubankAcquiresDexPage() {
 
       {/* Article Container */}
       <article className="mx-auto max-w-4xl px-6 lg:px-8 pt-16 sm:pt-20">
-        {/* Back to all posts */}
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Back to all posts
-        </Link>
+          
         {/* Tags */}
         <div className="mt-8 flex flex-wrap gap-2">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
