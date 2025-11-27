@@ -1,7 +1,13 @@
-import { Share2 } from "lucide-react";
 import Navbar from "@/components/sections/navbar/default";
+import { Share2 } from "lucide-react";
+import { Metadata } from "next";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Nubank acquires dex to accelerate data and AI strategy | dex",
+  description: "dex has been acquired by Nubank. Here's what comes next.",
+};
+
+export default function NubankAcquiresDexPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navbar */}
@@ -9,6 +15,7 @@ export default function Home() {
 
       {/* Article Container */}
       <article className="mx-auto max-w-4xl px-6 lg:px-8 pt-16 sm:pt-20">
+          
         {/* Tags */}
         <div className="mt-8 flex flex-wrap gap-2">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20">
@@ -21,12 +28,12 @@ export default function Home() {
 
         {/* Headline */}
         <h1 className="mt-6 text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-6xl">
-          dex team is joining Nubank to accelerate data and AI strategy
+          Nubank acquires dex to accelerate data and AI strategy
         </h1>
 
         {/* Subtitle */}
         <p className="mt-6 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8">
-          We&apos;re excited to announce that the dex team is joining Nubank. Here&apos;s what comes next
+          dex has been acquired by Nubank. Here&apos;s what comes next.
         </p>
 
         {/* Author & Meta Info */}
@@ -98,66 +105,63 @@ export default function Home() {
 
         {/* Article Content */}
         <div className="mt-12 pb-20">
-          <div className="space-y-6 text-base/7 text-gray-700">
-            <p>
-              Today we&apos;re excited to announce that the dex team is joining Nubank. This is an important step for dex&apos;s talented engineers, who will be able to bring their knowledge and expertise to a company of Nubank&apos;s scale and relevance, serving more than 127 million customers across Latin America. Our arrival complements Nubank&apos;s ongoing investments in data and AI capabilities, with the goal of continuing to drive global disruption in financial services enabled by advances in artificial intelligence.
-            </p>
-          </div>
+          {/* Opening Statement */}
+          <p className="text-xl/8 text-gray-700 font-medium">
+            Today, we&apos;re excited to announce that{" "}
+            <strong className="text-gray-900">dex has been acquired by Nubank</strong>!
+          </p>
 
-          {/* Section: Our Mission and Journey */}
-          <h2 className="mt-16 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-            Our Mission and Journey
-          </h2>
-          <div className="mt-6 space-y-6 text-base/7 text-gray-700">
+          <div className="mt-8 space-y-6 text-base/7 text-gray-700">
+            <p>
+              dex&apos;s team will join Nubank to help them scale their data infrastructure for serving over 100 million customers across Latin America with intelligent, data-driven financial experiences. This acquisition will also accelerate Nubank&apos;s AI-first strategy, enabling them to deliver more personalized, intelligent financial products powered by real-time data and advanced machine learning.
+            </p>
+
             <p>
               When we started dex, our mission was to make modern data engineering accessible to every company. We built dex as an all-in-one platform that combined data collection, transformation, orchestration, and monitoring in a way that eliminated complexity and empowered teams to focus on building what makes their business special. To deliver on this promise, we architected dex from the ground up for scale—leveraging distributed systems, cloud-native infrastructure, and modern data processing paradigms to handle massive data volumes while maintaining performance and reliability.
             </p>
 
             <p>
-              Over the past years, dex has processed hundreds of petabytes of data across hundreds of environments, helping companies transform their data operations. We&apos;ve seen teams reduce pipeline delivery time by 60-80%, eliminate platform maintenance overhead entirely, and achieve 4-8x cost savings compared to traditional approaches.
+              Over the past years, dex has processed terabytes of data across hundreds of environments, helping companies like Insider, Moon Ventures, Hubii, and Caffeine Army transform their data operations. We&apos;ve seen teams reduce pipeline delivery time by 60-80%, eliminate platform maintenance overhead entirely, and achieve 4-8x cost savings compared to traditional approaches.
             </p>
 
             <p>
-              We&apos;ve been longtime admirers of Nubank and their mission to fight complexity and empower people through technology. The opportunity to bring our expertise in building scalable data platforms alongside Nubank&apos;s team is incredibly exciting.
+              We&apos;ve been longtime admirers of Nubank and their mission to fight complexity and empower people through technology. The opportunity to bring our expertise in building scalable data platforms to help Nubank serve millions more customers across Latin America is incredibly exciting.
             </p>
           </div>
 
-          {/* Section: What Will Happen to dex */}
+          {/* Section: What will happen to dex */}
           <h2 className="mt-16 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-            What Will Happen to dex
+            What will happen to dex
           </h2>
           <div className="mt-6 space-y-6 text-base/7 text-gray-700">
             <p>
-              The dex platform will continue to operate until February 1st, 2026, giving everyone time to plan and execute their transition. During this period, support will be limited to stability issues only. Development of new connectors will be suspended, and new sign-ups are disabled starting today.
+              <strong className="text-gray-900">The dex platform will continue to operate until February 1st, 2026</strong>, giving everyone time to plan and execute their transition. During this period, support will be limited to platform-related issues only. Development of new connectors will be suspended, and new sign-ups are disabled starting today.
             </p>
           </div>
 
           {/* Section: How to transition */}
           <h2 className="mt-16 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
-            How to Transition from dex
+            How to transition from dex
           </h2>
           <div className="mt-6 space-y-6 text-base/7 text-gray-700">
             <p>
               We understand transitions take time and planning. We&apos;re committed to making this as smooth as possible for all our customers.
             </p>
 
-            <p>
-              We&apos;ve prepared a comprehensive migration guide that outlines two recommended paths: <strong className="text-gray-900">dbt Cloud + Fivetran</strong> (best for teams preferring specialized tools) and <strong className="text-gray-900">Databricks</strong> (best for all-in-one platform needs). The guide includes detailed feature comparisons, pricing information, and step-by-step instructions.
-            </p>
+            <p>We suggest the following platforms as potential alternatives:</p>
+            <ul className="mt-4 space-y-3 list-disc pl-6">
+              <li><strong className="text-gray-900">Airbyte</strong> (for data ingestion and replication)</li>
+              <li><strong className="text-gray-900">dbt</strong> (for data transformation and modeling)</li>
+              <li><strong className="text-gray-900">Airflow</strong> (for orchestration)</li>
+            </ul>
 
-            <p>
-              <a
-                href="https://docs.dexlabs.io/migration/migrating-from-dex"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary hover:text-primary/80 underline"
-              >
-                Read the full migration guide →
-              </a>
-            </p>
+            <p className="mt-6">For teams looking for all-in-one platforms similar to dex:</p>
+            <ul className="mt-4 space-y-3 list-disc pl-6">
+              <li><strong className="text-gray-900">Databricks</strong> (comprehensive data and AI platform)</li>
+            </ul>
 
-            <p>
-              Our team will be in contact with each customer individually to discuss your specific needs and help plan your migration path.
+            <p className="mt-6">
+              Our team will be reaching out to each customer individually over the coming weeks to discuss your specific needs and help plan your migration path. We&apos;ll also offer transition support through our existing support channels.
             </p>
           </div>
 
@@ -167,11 +171,15 @@ export default function Home() {
           </h2>
           <div className="mt-6 space-y-6 text-base/7 text-gray-700">
             <p>
-              To every team and data engineer who trusted dex: thank you. Building alongside you has been the greatest part of this journey. Watching you scale your companies, build incredible data products, and empower your teams with insights that drive real business impact—these stories have been our greatest reward.
+              To every team and data engineer who trusted dex: <strong className="text-gray-900">thank you</strong>.
             </p>
 
             <p>
-              We&apos;re incredibly proud of what we built together and extremely excited to be part of Nubank&apos;s future achievements.
+              Building alongside you has been the greatest part of this journey. Watching you scale your companies, build incredible data products, and empower your teams with insights that drive real business impact—these stories have been our greatest reward.
+            </p>
+
+            <p>
+              We&apos;re incredibly proud of what we built together and extremely excited to help Nubank build what&apos;s next.
             </p>
           </div>
 
@@ -179,6 +187,9 @@ export default function Home() {
           <div className="mt-16 border-t border-gray-200 pt-10">
             <h3 className="text-xl font-semibold text-gray-900">Written by Gustavo Beltrami</h3>
             <p className="mt-2 text-base font-medium text-gray-600">Founder &amp; CEO</p>
+            <p className="mt-3 text-base/7 text-gray-600">
+              Passionate about making data engineering simple and empowering teams to build great products without infrastructure complexity.
+            </p>
           </div>
         </div>
       </article>
