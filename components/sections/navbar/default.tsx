@@ -7,9 +7,9 @@ import { useBanner } from "@/components/providers/banner-context";
 import { cn } from "@/lib/utils";
 
 import {
-    Navbar as NavbarComponent,
-    NavbarLeft,
-    NavbarRight,
+  Navbar as NavbarComponent,
+  NavbarLeft,
+  NavbarRight,
 } from "@/components/ui/navbar";
 import Navigation from "@/components/ui/navigation";
 import { NAV_LINKS } from "@/components/ui/navigation-links";
@@ -64,8 +64,7 @@ export default function Navbar({
   
   return (
     <header className={cn(
-      "sticky z-50 -mb-4 px-4 pb-4",
-      isBannerVisible ? "top-[44px]" : "top-0",
+      "sticky z-50 -mb-4 px-4 pb-4 top-0",
       className
     )}>
       <div className="fade-bottom bg-background/15 absolute left-0 h-24 w-full backdrop-blur-lg"></div>
